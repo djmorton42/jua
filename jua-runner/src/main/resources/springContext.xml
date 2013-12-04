@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd" xmlns:aop="http://www.springframework.org/schema/aop">
+    <context:annotation-config />
+
+
+    <bean id="gameRunner" class="ca.quadrilateral.jua.runner.GameRunner" init-method="initialize" />
+
+    <bean id="gameWindow" class="ca.quadrilateral.jua.runner.GameWindow" />
+    <bean id="keyHandler" class="ca.quadrilateral.jua.runner.KeyboardHandler" />
+
+    <bean id="gameStats" class="ca.quadrilateral.jua.game.GameStats" />
+    <bean id="gameStateMacnhine" class="ca.quadrilateral.jua.game.GameStateMachine" />
+
+    <bean id="displayManager" class="ca.quadrilateral.jua.runner.DisplayManager" />
+
+    <!-- Adventure Parsers -->
+    <bean id="adventureParser" class="ca.quadrilateral.jua.runner.parser.AdventureParser" />
+
+    <bean id="textEventParser" class="ca.quadrilateral.jua.runner.parser.event.TextEventParser" />
+    <bean id="pictureEventParser" class="ca.quadrilateral.jua.runner.parser.event.PictureEventParser" />
+    <bean id="questionYesNoEventParser" class="ca.quadrilateral.jua.runner.parser.event.QuestionYesNoEventParser" />
+    <bean id="questionButtonEventParser" class="ca.quadrilateral.jua.runner.parser.event.QuestionButtonEventParser" />
+    <bean id="relocatePartyEventParser" class="ca.quadrilateral.jua.runner.parser.event.RelocatePartyEventParser" />
+    <bean id="gainExperienceEventParser" class="ca.quadrilateral.jua.runner.parser.event.GainExperienceEventParser" />
+    <bean id="guidedTourEventParser" class="ca.quadrilateral.jua.runner.parser.event.GuidedTourEventParser" />
+    <bean id="giveTreasureEventParser" class="ca.quadrilateral.jua.runner.parser.event.GiveTreasureEventParser" />
+
+    <bean id="damageEventParser" class="ca.quadrilateral.jua.runner.parser.event.DamageEventParser" />
+    <bean id="attackEventParser" class="ca.quadrilateral.jua.runner.parser.event.AttackEventParser" />
+    <bean id="campEventParser" class="ca.quadrilateral.jua.runner.parser.event.CampEventParser" />
+    <bean id="vaultEventParser" class="ca.quadrilateral.jua.runner.parser.event.VaultEventParser" />
+    <bean id="tavernEventParser" class="ca.quadrilateral.jua.runner.parser.event.TavernEventParser" />
+    <bean id="whoTriesEventParser" class="ca.quadrilateral.jua.runner.parser.event.WhoTriesEventParser" />
+    <bean id="whoPaysEventParser" class="ca.quadrilateral.jua.runner.parser.event.WhoPaysEventParser" />
+
+    <bean id="postEventActionParser" class="ca.quadrilateral.jua.runner.parser.event.PostEventActionParser" />
+
+    <!-- END Adventure Parsers -->
+
+    <bean id="deferredChainParseTracker" class="ca.quadrilateral.jua.runner.parser.event.DeferredChainParseTracker" />
+
+    <bean id="gameConfigurationManager" class="ca.quadrilateral.jua.game.impl.GameConfiguration" />
+
+    <bean id="levelDefinitionManager" class="ca.quadrilateral.jua.game.level.LevelDefinitionManager" />
+    <bean id="wallDefinitionManager" class="ca.quadrilateral.jua.game.wall.WallDefinitionManager" />
+    <bean id="overlayDefinitionManager" class="ca.quadrilateral.jua.game.wall.OverlayDefinitionManager" />
+    <bean id="backgroundDefinitionManager" class="ca.quadrilateral.jua.game.background.BackgroundDefinitionManager" />
+    <bean id="borderDefinitionManager" class="ca.quadrilateral.jua.game.border.BorderDefinitionManager" />
+
+    <bean id="gameContext" class="ca.quadrilateral.jua.game.context.GameContext" />
+    <bean id="levelContext" class="ca.quadrilateral.jua.game.context.LevelContext" />
+
+    <bean id="gameScreenRenderer" class="ca.quadrilateral.jua.displayengine.renderer.impl.DefaultGameScreenRenderer" />
+    <bean id="firstPersonBackgroundRenderer" class="ca.quadrilateral.jua.displayengine.renderer.impl.DefaultFirstPersonViewBackgroundRenderer" />
+    <bean id="firstPersonWallRenderer" class="ca.quadrilateral.jua.displayengine.renderer.impl.DefaultFirstPersonViewWallRenderer" />
+    <bean id="partyRenderer" class="ca.quadrilateral.jua.displayengine.impl.DefaultPartyRenderer" />
+
+    <bean id="characterInfoRenderer" class="ca.quadrilateral.jua.displayengine.impl.DefaultCharacterInfoRenderer" />
+
+    <bean id="characterInventoryRenderer" class="ca.quadrilateral.jua.displayengine.impl.DefaultCharacterInventoryRenderer" />
+
+
+    <bean id="imageRenderer" class="ca.quadrilateral.jua.displayengine.impl.DefaultImageRenderer" />
+    <bean id="textRenderer" class="ca.quadrilateral.jua.displayengine.impl.DefaultTextRenderer" />
+
+<!--
+    <bean id="optionRenderer" class="ca.quadrilateral.jua.displayengine.impl.DefaultOptionRenderer" />
+-->
+    <bean id="pulsingOptionRenderer" class="ca.quadrilateral.jua.displayengine.impl.PulsingOptionRenderer">
+        <constructor-arg><value>FF5555</value></constructor-arg>
+        <constructor-arg><value>9D0000</value></constructor-arg>
+        <constructor-arg><value>FFFFFF</value></constructor-arg>
+        <constructor-arg><value>2000</value></constructor-arg>
+    </bean>
+
+    <bean id="levelStructureCache" class="ca.quadrilateral.jua.game.GameImageCache" />
+    <!--  <bean id="gameAssetCache"      class="ca.quadrilateral.jua.game.GameImageCache" /> -->
+
+
+    <bean id="wallImageLoader" class="ca.quadrilateral.jua.game.image.WallImageLoader" />
+    <bean id="overlayImageLoader" class="ca.quadrilateral.jua.game.image.OverlayImageLoader" />
+    <bean id="backgroundImageLoader" class="ca.quadrilateral.jua.game.image.BackgroundImageLoader" />
+    <bean id="borderImageLoader" class="ca.quadrilateral.jua.game.image.BorderImageLoader" />
+
+
+    <bean id="textEventHandler" class="ca.quadrilateral.jua.game.eventhandler.TextEventHandler" />
+    <bean id="pictureEventHandler" class="ca.quadrilateral.jua.game.eventhandler.PictureEventHandler" />
+    <bean id="relocatePartyEventHandler" class="ca.quadrilateral.jua.game.eventhandler.RelocatePartyEventHandler" />
+    <bean id="questionYesNoEventHandler" class="ca.quadrilateral.jua.game.eventhandler.QuestionYesNoEventHandler" />
+    <bean id="questionButtonEventHandler" class="ca.quadrilateral.jua.game.eventhandler.QuestionButtonEventHandler" />
+    <bean id="gainExperienceEventHandler" class="ca.quadrilateral.jua.game.eventhandler.GainExperienceEventHandler" />
+    <bean id="tavernEventHandler" class="ca.quadrilateral.jua.game.eventhandler.TavernEventHandler" />
+    <bean id="damageEventHandler" class="ca.quadrilateral.jua.game.eventhandler.DamageEventHandler" />
+    <bean id="attackEventHandler" class="ca.quadrilateral.jua.game.eventhandler.AttackEventHandler" />
+    <bean id="whoTriesEventHandler" class="ca.quadrilateral.jua.game.eventhandler.WhoTriesEventHandler" />
+    <bean id="guidedTourEventHandler" class="ca.quadrilateral.jua.game.eventhandler.GuidedTourEventHandler" />
+    <bean id="giveTreasureEventHandler" class="ca.quadrilateral.jua.game.eventhandler.GiveTreasureEventHandler" />
+
+
+    <bean id="characterInfoViewRendererQueue" class="ca.quadrilateral.jua.displayengine.renderer.impl.RendererQueue">
+        <constructor-arg>
+            <list>
+                <ref bean="gameScreenRenderer" />
+                <ref bean="characterInfoRenderer" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="characterInventoryViewRenderQueue" class="ca.quadrilateral.jua.displayengine.renderer.impl.RendererQueue">
+        <constructor-arg>
+            <list>
+                <ref bean="gameScreenRenderer" />
+                <ref bean="characterInventoryRenderer" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="firstPersonViewRenderQueue" class="java.util.LinkedList">
+        <constructor-arg>
+            <list>
+                <ref bean="gameScreenRenderer" />
+
+                <ref bean="firstPersonBackgroundRenderer" />
+                <ref bean="firstPersonWallRenderer" />
+
+                <ref bean="partyRenderer" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="areaViewRenderQueue" class="java.util.LinkedList">
+        <constructor-arg>
+            <list>
+                <ref bean="gameScreenRenderer" />
+            </list>
+        </constructor-arg>
+    </bean>
+
+    <bean id="displayEngine3DView" class="ca.quadrilateral.jua.displayengine.impl.DefaultFirstPersonViewDisplayEngine">
+        <constructor-arg>
+            <ref bean="firstPersonViewRenderQueue" />
+        </constructor-arg>
+    </bean>
+    <bean id="displayEngineAreaView" class="ca.quadrilateral.jua.displayengine.impl.DefaultAreaViewDisplayEngine">
+            <constructor-arg>
+            <ref bean="firstPersonViewRenderQueue" />
+        </constructor-arg>
+    </bean>
+
+    <bean id="gameClock" class="ca.quadrilateral.jua.game.impl.DefaultGameClock" />
+    <bean id="scriptManager" class="ca.quadrilateral.jua.game.impl.ScriptManager" />
+    <bean id="diceRoller" class="ca.quadrilateral.jua.game.impl.DiceRoller" />
+
+
+</beans>

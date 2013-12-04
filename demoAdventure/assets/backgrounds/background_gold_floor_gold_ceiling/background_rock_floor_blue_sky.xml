@@ -1,0 +1,11 @@
+<jua_background name="GoldFloorGoldCeiling" id="a55fbea6-21db-47d0-a88e-f2e157a2985d">    
+    <backgroundset>
+        <background xOffset="0" yOffset="0" timeOfDay="Afternoon" filename="background_gold_floor_gold_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dawn" filename="background_gold_floor_gold_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dusk" filename="background_gold_floor_gold_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Evening" filename="background_gold_floor_gold_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="MidDay" filename="background_gold_floor_gold_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Morning" filename="background_gold_floor_gold_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Night" filename="background_gold_floor_gold_ceiling.png" />
+    </backgroundset>
+</jua_background>

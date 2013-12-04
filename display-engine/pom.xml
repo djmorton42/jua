@@ -1,0 +1,33 @@
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>jua</artifactId>
+        <groupId>ca.quadrilateral.jua</groupId>
+        <version>0.0.1</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>ca.quadrilateral.jua</groupId>
+    <artifactId>display-engine</artifactId>
+    <name>Display Engine Definition</name>
+    <version>0.0.1</version>
+    <dependencies>
+        <dependency>
+            <groupId>ca.quadrilateral.jua</groupId>
+            <artifactId>game</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+    </dependencies>
+</project>

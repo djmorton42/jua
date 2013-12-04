@@ -1,0 +1,27 @@
+<jua_wall name="WoodPanelWindow" id="46b3be70-139f-49b7-afb0-e2e380d6f72f">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="WoodPanelWindow_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="WoodPanelWindow_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="WoodPanelWindow_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="WoodPanelWindow_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="WoodPanelWindow_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="WoodPanelWindow_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="WoodPanelWindow_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="WoodPanelWindow_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="WoodPanelWindow_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="WoodPanelWindow_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_WoodPanelWindow\WoodPanelWindow_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>

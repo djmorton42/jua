@@ -1,0 +1,27 @@
+<jua_wall name="SmallStone" id="40a9c21a-6ff7-4e01-bf32-1a802d8b8003">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="SmallStone_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="SmallStone_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="SmallStone_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="SmallStone_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="SmallStone_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="SmallStone_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="SmallStone_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="SmallStone_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="SmallStone_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="SmallStone_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_SmallStone\SmallStone_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>

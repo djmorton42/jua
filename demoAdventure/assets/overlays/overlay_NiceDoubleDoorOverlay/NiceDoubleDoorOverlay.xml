@@ -1,0 +1,14 @@
+<jua_overlay name="NiceDoubleDoorOverlay" id="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678">
+  <overlayset>
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="NiceDoubleDoorOverlay_close_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="NiceDoubleDoorOverlay_near_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="NiceDoubleDoorOverlay_far_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="NiceDoubleDoorOverlay_far_front_secondary.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="NiceDoubleDoorOverlay_close_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="NiceDoubleDoorOverlay_close_left.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="NiceDoubleDoorOverlay_near_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="NiceDoubleDoorOverlay_near_left.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="NiceDoubleDoorOverlay_far_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="NiceDoubleDoorOverlay_far_left.png" />
+  </overlayset>
+</jua_overlay>

@@ -1,0 +1,11 @@
+<jua_background name="StoneFloorWoodCeiling" id="162bc150-4a5c-4ae8-a432-8ddf0505409c">    
+    <backgroundset>
+        <background xOffset="0" yOffset="0" timeOfDay="Afternoon" filename="background_stone_floor_wood_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dawn" filename="background_stone_floor_wood_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dusk" filename="background_stone_floor_wood_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Evening" filename="background_stone_floor_wood_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="MidDay" filename="background_stone_floor_wood_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Morning" filename="background_stone_floor_wood_ceiling.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Night" filename="background_stone_floor_wood_ceiling.png" />
+    </backgroundset>
+</jua_background>

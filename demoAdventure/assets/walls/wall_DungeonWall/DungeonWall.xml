@@ -1,0 +1,27 @@
+<jua_wall name="DungeonWall" id="29184150-8681-4239-a024-43b45ff65873">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="DungeonWall_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="DungeonWall_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="DungeonWall_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="DungeonWall_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="DungeonWall_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="DungeonWall_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="DungeonWall_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="DungeonWall_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="DungeonWall_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="DungeonWall_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_DungeonWall\DungeonWall_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>

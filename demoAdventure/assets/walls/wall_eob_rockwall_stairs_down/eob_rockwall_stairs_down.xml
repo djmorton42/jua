@@ -1,0 +1,27 @@
+<jua_wall name="eob_rockwall_stairs_down" id="885f455b-9eae-4172-981f-9d2b31e7e16c">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="eob_rockwall_stairs_down_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="eob_rockwall_stairs_down_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="eob_rockwall_stairs_down_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="eob_rockwall_stairs_down_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="eob_rockwall_stairs_down_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="eob_rockwall_stairs_down_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="eob_rockwall_stairs_down_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="eob_rockwall_stairs_down_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="eob_rockwall_stairs_down_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="eob_rockwall_stairs_down_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_rockwall_stairs_down\eob_rockwall_stairs_down_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>

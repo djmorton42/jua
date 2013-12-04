@@ -1,0 +1,2067 @@
+<jua-adventure name="JUA Demo Adventure" version="1.0">
+    <authors>
+        <author>Daniel Morton</author>
+    </authors>
+
+    <game-start levelId="000ad729-0a26-45e4-926a-397036a99001" x="15" y="1" facing="West" />
+    <default-border id="18aad729-0a26-45e4-926a-297036a99cc9" />
+
+    <currencies baseCurrency="Platinum" expressionCurrency="Gold">
+        <currency name="Platinum" value="500" experienceValue="5" canBeChanged="true" />
+        <currency name="Gold" value="100" experienceValue="1" canBeChanged="true" />
+        <currency name="Electrum" value="50" experienceValue="0" canBeChanged="true" />
+        <currency name="Silver" value="10" experienceValue="0" canBeChanged="true" />
+        <currency name="Copper" value="1" experienceValue="0" canBeChanged="true" />
+        <currency name="Gem" value="20D20" experienceValue="200" canBeChanged="false"/>
+        <currency name="Jewelry" value="20D100" experienceValue="200" canBeChanged="false" />
+    </currencies>
+
+    <alignments>
+        <alignment name="Lawful Good" abbreviation="LG" />
+        <alignment name="Neutral Good" abbreviation="NG" />
+        <alignment name="Chaotic Good" abbreviation="CG" />
+        <alignment name="Lawful Evil" abbreviation="LE" />
+        <alignment name="Neutral Evil" abbreviation="NE" />
+        <alignment name="Chaotic Evil" abbreviation="CE" />
+        <alignment name="Lawful Neutral" abbreviation="LN" />
+        <alignment name="Chaotic Neutral" abbreviation="CN" />
+        <alignment name="True Neutral" abbreviation="TN" />
+    </alignments>
+
+    <time>
+        <unit name="Minutes" steps="1" />
+        <unit name="Hours" steps="60" />
+        <unit name="Days" steps="1440" />
+        <unit name="Months" steps="43200" />
+        <unit name="Years" steps="15768000" offset="2010" />
+    </time>
+
+    <races>
+        <race name="Human" baseAgeUnits="283824000" ageVariation="1d157680000" />
+        <race name="Dwarf" baseAgeUnits="1576800000" ageVariation="1d157680000" />
+        <race name="Elf" baseAgeUnits="1576800000" ageVariation="1d157680000" />
+        <race name="Half-Elf" baseAgeUnits="946080000" ageVariation="1d157680000" />
+        <race name="Gnome" baseAgeUnits="1576800000" ageVariation="1d157680000" />
+        <race name="Halfling" baseAgeUnits="630720000" ageVariation="1d157680000" />
+    </races>
+
+    <classes>
+        <class name="Fighter" savingThrowTable="3" thac0Formula="1/1">
+            <primeRequisites>
+                <ability name="Strength" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Strength" minimum="9" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="250000" advancedRankAdditionalHitPoints="3">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d10" />
+                <level rank="2" xpRequired="2000" additionalHitPoints="1d10" />
+                <level rank="3" xpRequired="4000" additionalHitPoints="1d10" />
+                <level rank="4" xpRequired="8000" additionalHitPoints="1d10" />
+                <level rank="5" xpRequired="16000" additionalHitPoints="1d10" />
+                <level rank="6" xpRequired="32000" additionalHitPoints="1d10" />
+                <level rank="7" xpRequired="64000" additionalHitPoints="1d10" />
+                <level rank="8" xpRequired="125000" additionalHitPoints="1d10" />
+                <level rank="9" xpRequired="250000" additionalHitPoints="1d10" />
+            </levels>
+            <levelBasedAbilities>
+                <levelBasedAbility name="Hide in Shadows">
+                    <abilityValue level="1" percentage="10" />
+                    <abilityValue level="2" percentage="15" />
+                    <abilityValue level="3" percentage="20" />
+                    <abilityValue level="4" percentage="25" />
+                    <abilityValue level="5" percentage="31" />
+                    <abilityValue level="6" percentage="37" />
+                    <abilityValue level="7" percentage="43" />
+                    <abilityValue level="8" percentage="49" />
+                    <abilityValue level="9" percentage="56" />
+                    <abilityValue level="10" percentage="63" />
+                    <abilityValue level="11" percentage="70" />
+                    <abilityValue level="12" percentage="77" />
+                    <abilityValue level="13" percentage="85" />
+                    <abilityValue level="14" percentage="93" />
+                    <abilityValue level="15" percentage="99" />
+                </levelBasedAbility>
+                <levelBasedAbility name="Move Silently">
+                    <abilityValue level="1" percentage="15" />
+                    <abilityValue level="2" percentage="21" />
+                    <abilityValue level="3" percentage="27" />
+                    <abilityValue level="4" percentage="33" />
+                    <abilityValue level="5" percentage="40" />
+                    <abilityValue level="6" percentage="47" />
+                    <abilityValue level="7" percentage="55" />
+                    <abilityValue level="8" percentage="62" />
+                    <abilityValue level="9" percentage="70" />
+                    <abilityValue level="10" percentage="78" />
+                    <abilityValue level="11" percentage="86" />
+                    <abilityValue level="12" percentage="94" />
+                    <abilityValue level="13" percentage="99" />
+                </levelBasedAbility>
+            </levelBasedAbilities>
+        </class>
+        <class name="Paladin" savingThrowTable="3" thac0Formula="1/1">
+            <primeRequisites>
+                <ability name="Strength" />
+                <ability name="Charisma" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Strength" minimum="12" />
+                <ability name="Constitution" minimum="9" />
+                <ability name="Wisdom" minimum="13" />
+                <ability name="Charisma" minimum="17" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="300000" advancedRankAdditionalHitPoints="3">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d10" />
+                <level rank="2" xpRequired="2250" additionalHitPoints="1d10" />
+                <level rank="3" xpRequired="4500" additionalHitPoints="1d10" />
+                <level rank="4" xpRequired="9000" additionalHitPoints="1d10" />
+                <level rank="5" xpRequired="18000" additionalHitPoints="1d10" />
+                <level rank="6" xpRequired="36000" additionalHitPoints="1d10" />
+                <level rank="7" xpRequired="75000" additionalHitPoints="1d10" />
+                <level rank="8" xpRequired="150000" additionalHitPoints="1d10" />
+                <level rank="9" xpRequired="300000" additionalHitPoints="1d10" />
+            </levels>
+        </class>
+        <class name="Ranger" savingThrowTable="3" thac0Formula="1/1">
+            <primeRequisites>
+                <ability name="Strength" />
+                <ability name="Dexterity" />
+                <ability name="Wisdom" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Strength" minimum="13" />
+                <ability name="Dexterity" minimum="13" />
+                <ability name="Constitution" minimum="14" />
+                <ability name="Wisdom" minimum="14" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="300000" advancedRankAdditionalHitPoints="3">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d10" />
+                <level rank="2" xpRequired="2250" additionalHitPoints="1d10" />
+                <level rank="3" xpRequired="4500" additionalHitPoints="1d10" />
+                <level rank="4" xpRequired="9000" additionalHitPoints="1d10" />
+                <level rank="5" xpRequired="18000" additionalHitPoints="1d10" />
+                <level rank="6" xpRequired="36000" additionalHitPoints="1d10" />
+                <level rank="7" xpRequired="75000" additionalHitPoints="1d10" />
+                <level rank="8" xpRequired="150000" additionalHitPoints="1d10" />
+                <level rank="9" xpRequired="300000" additionalHitPoints="1d10" />
+            </levels>
+        </class>
+        <class name="Mage" savingThrowTable="4" thac0Formula="1/3">
+            <primeRequisites>
+                <ability name="Intelligence" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Intelligence" minimum="9" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="375000" advancedRankAdditionalHitPoints="1">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d4" />
+                <level rank="2" xpRequired="2500" additionalHitPoints="1d4" />
+                <level rank="3" xpRequired="5000" additionalHitPoints="1d4" />
+                <level rank="4" xpRequired="10000" additionalHitPoints="1d4" />
+                <level rank="5" xpRequired="20000" additionalHitPoints="1d4" />
+                <level rank="6" xpRequired="40000" additionalHitPoints="1d4" />
+                <level rank="7" xpRequired="60000" additionalHitPoints="1d4" />
+                <level rank="8" xpRequired="90000" additionalHitPoints="1d4" />
+                <level rank="9" xpRequired="135000" additionalHitPoints="1d4" />
+                <level rank="10" xpRequired="250000" additionalHitPoints="1d4" />
+                <level rank="11" xpRequired="375000" additionalHitPoints="1" />
+            </levels>
+        </class>
+        <class name="Cleric" savingThrowTable="1" thac0Formula="2/3">
+            <primeRequisites>
+                <ability name="Wisdom" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Wisdom" minimum="9" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="275000" advancedRankAdditionalHitPoints="2">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d8" />
+                <level rank="2" xpRequired="1500" additionalHitPoints="1d8" />
+                <level rank="3" xpRequired="3000" additionalHitPoints="1d8" />
+                <level rank="4" xpRequired="6000" additionalHitPoints="1d8" />
+                <level rank="5" xpRequired="13000" additionalHitPoints="1d8" />
+                <level rank="6" xpRequired="27500" additionalHitPoints="1d8" />
+                <level rank="7" xpRequired="55000" additionalHitPoints="1d8" />
+                <level rank="8" xpRequired="110000" additionalHitPoints="1d8" />
+                <level rank="9" xpRequired="225000" additionalHitPoints="1d8" />
+            </levels>
+        </class>
+        <class name="Druid" savingThrowTable="1" thac0Formula="2/3">
+            <primeRequisites>
+                <ability name="Wisdom" />
+                <ability name="Charisma" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Wisdom" minimum="12" />
+                <ability name="Charisma" minimum="15" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="500000" advancedRankAdditionalHitPoints="2">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d8" />
+                <level rank="2" xpRequired="2000" additionalHitPoints="1d8" />
+                <level rank="3" xpRequired="4000" additionalHitPoints="1d8" />
+                <level rank="4" xpRequired="7500" additionalHitPoints="1d8" />
+                <level rank="5" xpRequired="12500" additionalHitPoints="1d8" />
+                <level rank="6" xpRequired="20000" additionalHitPoints="1d8" />
+                <level rank="7" xpRequired="35000" additionalHitPoints="1d8" />
+                <level rank="8" xpRequired="60000" additionalHitPoints="1d8" />
+                <level rank="9" xpRequired="90000" additionalHitPoints="1d8" />
+                <level rank="10" xpRequired="125000" additionalHitPoints="2" />
+                <level rank="11" xpRequired="200000" additionalHitPoints="2" />
+                <level rank="12" xpRequired="300000" additionalHitPoints="2" />
+                <level rank="13" xpRequired="750000" additionalHitPoints="2" />
+                <level rank="14" xpRequired="1500000" additionalHitPoints="2" />
+                <level rank="15" xpRequired="3000000" additionalHitPoints="2" />
+            </levels>
+        </class>
+        <class name="Thief" savingThrowTable="2" thac0Formula="1/2">
+            <primeRequisites>
+                <ability name="Dexterity" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Dexterity" minimum="9" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="220000" advancedRankAdditionalHitPoints="2">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d6" />
+                <level rank="2" xpRequired="1250" additionalHitPoints="1d6" />
+                <level rank="3" xpRequired="2500" additionalHitPoints="1d6" />
+                <level rank="4" xpRequired="5000" additionalHitPoints="1d6" />
+                <level rank="5" xpRequired="10000" additionalHitPoints="1d6" />
+                <level rank="6" xpRequired="20000" additionalHitPoints="1d6" />
+                <level rank="7" xpRequired="40000" additionalHitPoints="1d6" />
+                <level rank="8" xpRequired="70000" additionalHitPoints="1d6" />
+                <level rank="9" xpRequired="110000" additionalHitPoints="1d6" />
+                <level rank="10" xpRequired="160000" additionalHitPoints="1d6" />
+                <level rank="11" xpRequired="220000" additionalHitPoints="2" />
+            </levels>
+            <variableAbilities initialDistributablePoints="60" initialMaxAssignment="30" perLevelDistributablePoints="30" perLevelMaxAssignment="15">
+                <ability name="Pick Pockets" baseValue="15">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Elf" adjustment="5" />
+                        <raceAdjustment raceName="Half-Elf" adjustment="10" />
+                        <raceAdjustment raceName="Halfling" adjustment="5" />
+                    </raceAdjustments>
+                    <attributeAdjustments>
+                        <attributeAdjustment attribute="Dexterity" value="9" adjustment="-15" />
+                        <attributeAdjustment attribute="Dexterity" value="10" adjustment="-10" />
+                        <attributeAdjustment attribute="Dexterity" value="11" adjustment="-5" />
+                        <attributeAdjustment attribute="Dexterity" value="12" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="13" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="14" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="15" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="16" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="17" adjustment="5" />
+                        <attributeAdjustment attribute="Dexterity" value="18" adjustment="10" />
+                        <attributeAdjustment attribute="Dexterity" value="19" adjustment="15" />
+                    </attributeAdjustments>
+                </ability>
+                <ability name="Open Locks" baseValue="10">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Dwarf" adjustment="10" />
+                        <raceAdjustment raceName="Elf" adjustment="-5" />
+                        <raceAdjustment raceName="Gnome" adjustment="5" />
+                        <raceAdjustment raceName="Halfling" adjustment="5" />
+                    </raceAdjustments>
+                    <attributeAdjustments>
+                        <attributeAdjustment attribute="Dexterity" value="9" adjustment="-10" />
+                        <attributeAdjustment attribute="Dexterity" value="10" adjustment="-5" />
+                        <attributeAdjustment attribute="Dexterity" value="11" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="12" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="13" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="14" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="15" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="16" adjustment="5" />
+                        <attributeAdjustment attribute="Dexterity" value="17" adjustment="10" />
+                        <attributeAdjustment attribute="Dexterity" value="18" adjustment="15" />
+                        <attributeAdjustment attribute="Dexterity" value="19" adjustment="20" />
+                    </attributeAdjustments>
+                </ability>
+                <ability name="Find/Remove Traps" baseValue="5">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Dwarf" adjustment="15" />
+                        <raceAdjustment raceName="Gnome" adjustment="10" />
+                        <raceAdjustment raceName="Halfling" adjustment="5" />
+                    </raceAdjustments>
+                    <attributeAdjustments>
+                        <attributeAdjustment attribute="Dexterity" value="9" adjustment="-10" />
+                        <attributeAdjustment attribute="Dexterity" value="10" adjustment="-10" />
+                        <attributeAdjustment attribute="Dexterity" value="11" adjustment="-5" />
+                        <attributeAdjustment attribute="Dexterity" value="12" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="13" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="14" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="15" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="16" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="17" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="18" adjustment="5" />
+                        <attributeAdjustment attribute="Dexterity" value="19" adjustment="10" />
+                    </attributeAdjustments>
+                </ability>
+                <ability name="Move Silently" baseValue="10">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Elf" adjustment="5" />
+                        <raceAdjustment raceName="Gnome" adjustment="5" />
+                        <raceAdjustment raceName="Halfling" adjustment="10" />
+                    </raceAdjustments>
+                    <attributeAdjustments>
+                        <attributeAdjustment attribute="Dexterity" value="9" adjustment="-20" />
+                        <attributeAdjustment attribute="Dexterity" value="10" adjustment="-15" />
+                        <attributeAdjustment attribute="Dexterity" value="11" adjustment="-10" />
+                        <attributeAdjustment attribute="Dexterity" value="12" adjustment="-5" />
+                        <attributeAdjustment attribute="Dexterity" value="13" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="14" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="15" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="16" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="17" adjustment="5" />
+                        <attributeAdjustment attribute="Dexterity" value="18" adjustment="10" />
+                        <attributeAdjustment attribute="Dexterity" value="19" adjustment="15" />
+                    </attributeAdjustments>
+                </ability>
+                <ability name="Hide in Shadows" baseValue="5">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Elf" adjustment="10" />
+                        <raceAdjustment raceName="GHnome" adjustment="5" />
+                        <raceAdjustment raceName="Half-Elf" adjustment="5" />
+                        <raceAdjustment raceName="Halfling" adjustment="10" />
+                    </raceAdjustments>
+                    <attributeAdjustments>
+                        <attributeAdjustment attribute="Dexterity" value="9" adjustment="-10" />
+                        <attributeAdjustment attribute="Dexterity" value="10" adjustment="-5" />
+                        <attributeAdjustment attribute="Dexterity" value="11" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="12" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="13" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="14" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="15" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="16" adjustment="0" />
+                        <attributeAdjustment attribute="Dexterity" value="17" adjustment="5" />
+                        <attributeAdjustment attribute="Dexterity" value="18" adjustment="10" />
+                        <attributeAdjustment attribute="Dexterity" value="19" adjustment="15" />
+                    </attributeAdjustments>
+                </ability>
+                <ability name="Detect Noise" baseValue="15">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Elf" adjustment="5" />
+                        <raceAdjustment raceName="Gnome" adjustment="10" />
+                        <raceAdjustment raceName="Halfling" adjustment="5" />
+                    </raceAdjustments>
+                </ability>
+                <ability name="Climb Walls" baseValue="60">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Dwarf" adjustment="-10" />
+                        <raceAdjustment raceName="Gnome" adjustment="-15" />
+                        <raceAdjustment raceName="Halfling" adjustment="-15" />
+                    </raceAdjustments>
+                </ability>
+                <ability name="Read Languages" baseValue="0">
+                    <raceAdjustments>
+                        <raceAdjustment raceName="Dwarf" adjustment="-5" />
+                        <raceAdjustment raceName="Halfling" adjustment="-5" />
+                    </raceAdjustments>
+                </ability>
+            </variableAbilities>
+        </class>
+        <class name="Bard" savingThrowTable="2" thac0Formula="1/2">
+            <primeRequisites>
+                <ability name="Dexterity" />
+                <ability name="Charisma" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Dexterity" minimum="12" />
+                <ability name="Intelligence" minimum="13" />
+                <ability name="Charisma" minimum="15" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="220000" advancedRankAdditionalHitPoints="2">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d6" />
+                <level rank="2" xpRequired="1250" additionalHitPoints="1d6" />
+                <level rank="3" xpRequired="2500" additionalHitPoints="1d6" />
+                <level rank="4" xpRequired="5000" additionalHitPoints="1d6" />
+                <level rank="5" xpRequired="10000" additionalHitPoints="1d6" />
+                <level rank="6" xpRequired="20000" additionalHitPoints="1d6" />
+                <level rank="7" xpRequired="40000" additionalHitPoints="1d6" />
+                <level rank="8" xpRequired="70000" additionalHitPoints="1d6" />
+                <level rank="9" xpRequired="110000" additionalHitPoints="1d6" />
+                <level rank="10" xpRequired="160000" additionalHitPoints="1d6" />
+                <level rank="11" xpRequired="220000" additionalHitPoints="2" />
+            </levels>
+        </class>
+        <savingThrows>
+            <savingThrowTable saveTableId="1">
+                <savingThrowDefinition experienceLevelMax="3" paralyzationPoisonDeath="10" rodStaffWand="14" petrificationPolymorph="13" breathWeapon="16" spell="15" />
+                <savingThrowDefinition experienceLevelMax="6" paralyzationPoisonDeath="9" rodStaffWand="13" petrificationPolymorph="12" breathWeapon="15" spell="14" />
+                <savingThrowDefinition experienceLevelMax="9" paralyzationPoisonDeath="7" rodStaffWand="11" petrificationPolymorph="10" breathWeapon="13" spell="12" />
+                <savingThrowDefinition experienceLevelMax="12" paralyzationPoisonDeath="6" rodStaffWand="10" petrificationPolymorph="9" breathWeapon="12" spell="11" />
+                <savingThrowDefinition experienceLevelMax="15" paralyzationPoisonDeath="5" rodStaffWand="9" petrificationPolymorph="8" breathWeapon="11" spell="10" />
+                <savingThrowDefinition experienceLevelMax="18" paralyzationPoisonDeath="4" rodStaffWand="8" petrificationPolymorph="7" breathWeapon="10" spell="9" />
+                <savingThrowDefinition experienceLevelMax="255" paralyzationPoisonDeath="2" rodStaffWand="6" petrificationPolymorph="5" breathWeapon="8" spell="7" />
+            </savingThrowTable>
+            <savingThrowTable saveTableId="2">
+                <savingThrowDefinition experienceLevelMax="4" paralyzationPoisonDeath="13" rodStaffWand="14" petrificationPolymorph="12" breathWeapon="16" spell="15" />
+                <savingThrowDefinition experienceLevelMax="8" paralyzationPoisonDeath="12" rodStaffWand="12" petrificationPolymorph="11" breathWeapon="15" spell="13" />
+                <savingThrowDefinition experienceLevelMax="12" paralyzationPoisonDeath="11" rodStaffWand="10" petrificationPolymorph="10" breathWeapon="14" spell="11" />
+                <savingThrowDefinition experienceLevelMax="16" paralyzationPoisonDeath="10" rodStaffWand="8" petrificationPolymorph="9" breathWeapon="13" spell="9" />
+                <savingThrowDefinition experienceLevelMax="20" paralyzationPoisonDeath="9" rodStaffWand="6" petrificationPolymorph="8" breathWeapon="12" spell="7" />
+                <savingThrowDefinition experienceLevelMax="255" paralyzationPoisonDeath="8" rodStaffWand="4" petrificationPolymorph="7" breathWeapon="11" spell="5" />
+            </savingThrowTable>
+            <savingThrowTable saveTableId="3">
+                <savingThrowDefinition experienceLevelMax="0" paralyzationPoisonDeath="16" rodStaffWand="18" petrificationPolymorph="17" breathWeapon="20" spell="19" />
+                <savingThrowDefinition experienceLevelMax="2" paralyzationPoisonDeath="14" rodStaffWand="16" petrificationPolymorph="15" breathWeapon="17" spell="17" />
+                <savingThrowDefinition experienceLevelMax="4" paralyzationPoisonDeath="13" rodStaffWand="15" petrificationPolymorph="14" breathWeapon="16" spell="16" />
+                <savingThrowDefinition experienceLevelMax="6" paralyzationPoisonDeath="11" rodStaffWand="13" petrificationPolymorph="12" breathWeapon="13" spell="14" />
+                <savingThrowDefinition experienceLevelMax="8" paralyzationPoisonDeath="10" rodStaffWand="12" petrificationPolymorph="11" breathWeapon="12" spell="13" />
+                <savingThrowDefinition experienceLevelMax="10" paralyzationPoisonDeath="8" rodStaffWand="10" petrificationPolymorph="9" breathWeapon="9" spell="11" />
+                <savingThrowDefinition experienceLevelMax="12" paralyzationPoisonDeath="7" rodStaffWand="9" petrificationPolymorph="8" breathWeapon="8" spell="10" />
+                <savingThrowDefinition experienceLevelMax="14" paralyzationPoisonDeath="5" rodStaffWand="7" petrificationPolymorph="6" breathWeapon="5" spell="8" />
+                <savingThrowDefinition experienceLevelMax="16" paralyzationPoisonDeath="4" rodStaffWand="6" petrificationPolymorph="5" breathWeapon="4" spell="7" />
+                <savingThrowDefinition experienceLevelMax="255" paralyzationPoisonDeath="3" rodStaffWand="5" petrificationPolymorph="4" breathWeapon="4" spell="6" />
+            </savingThrowTable>
+            <savingThrowTable saveTableId="4">
+                <savingThrowDefinition experienceLevelMax="5" paralyzationPoisonDeath="14" rodStaffWand="11" petrificationPolymorph="13" breathWeapon="15" spell="12" />
+                <savingThrowDefinition experienceLevelMax="10" paralyzationPoisonDeath="13" rodStaffWand="9" petrificationPolymorph="11" breathWeapon="13" spell="10" />
+                <savingThrowDefinition experienceLevelMax="15" paralyzationPoisonDeath="11" rodStaffWand="7" petrificationPolymorph="9" breathWeapon="11" spell="8" />
+                <savingThrowDefinition experienceLevelMax="20" paralyzationPoisonDeath="10" rodStaffWand="5" petrificationPolymorph="7" breathWeapon="9" spell="6" />
+                <savingThrowDefinition experienceLevelMax="255" paralyzationPoisonDeath="8" rodStaffWand="3" petrificationPolymorph="5" breathWeapon="7" spell="4" />
+            </savingThrowTable>
+        </savingThrows>
+    </classes>
+
+    <levels>
+
+        <level id="000ad729-0a26-45e4-926a-397036a99001" levelType="3d" name="The Civilized District" height="18" width="20">
+
+
+            <backgrounds>
+
+                <!-- Training Hall -->
+                <background x="6" y="0" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="7" y="0" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="8" y="0" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="9" y="0" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="0" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="7" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="8" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="9" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="7" y="2" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="8" y="2" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="9" y="2" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="2" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <!-- End Training Hall -->
+
+                <!-- Inns -->
+                <background x="1" y="14" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="2" y="14" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="3" y="14" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+
+                <background x="5" y="12" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="5" y="13" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+
+                <background x="7" y="12" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="7" y="13" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <!-- End Inns -->
+
+                <!-- Taverns -->
+                <background x="16" y="12" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="16" y="13" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="16" y="14" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+
+                <background x="15" y="10" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="16" y="10" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+
+                <background x="9" y="8" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="9" y="9" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+
+                <background x="10" y="9" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="10" y="8" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="11" y="8" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <background x="12" y="8" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <!-- End Taverns -->
+
+                <!-- Shops -->
+                <background x="9" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="9" y="11" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="11" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+
+                <background x="9" y="13" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="13" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="11" y="13" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+
+                <background x="12" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="12" y="11" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="12" y="12" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="13" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+
+                <background x="14" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="16" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <!-- End Shops -->
+
+
+
+                <!-- Temples -->
+                <background x="9" y="4" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="10" y="4" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="11" y="4" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="12" y="4" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="12" y="3" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+
+                <background x="11" y="5" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+
+                <background x="9" y="6" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="10" y="6" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="11" y="6" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+
+
+                <background x="2" y="1" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="2" y="2" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="2" y="3" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="3" y="1" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="3" y="1" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+
+                <background x="1" y="12" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="1" y="13" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="2" y="13" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="3" y="13" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <background x="3" y="12" backgroundDefinitionId="a55fbea6-21db-47d0-a88e-f2e157a2985d" />
+                <!-- End Temples -->
+
+                <!-- City Hall -->
+                <background x="5" y="4" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+
+                <background x="5" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="6" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="6" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="6" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="7" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="7" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="7" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="9" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="9" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="9" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="10" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <!-- End City Hall -->
+
+                <!-- Dock -->
+
+                <background x="16" y="1" backgroundDefinitionId="0c1c5dac-5eef-4c17-a64a-ee41cefcb5bf" />
+                <background x="15" y="1" backgroundDefinitionId="0c1c5dac-5eef-4c17-a64a-ee41cefcb5bf" />
+                <background x="14" y="1" backgroundDefinitionId="0c1c5dac-5eef-4c17-a64a-ee41cefcb5bf" />
+                <!-- End Dock -->
+
+
+                <!-- Harbour -->
+                    <background x="13" y="1" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                    <background x="12" y="1" backgroundDefinitionId="e31d1f10-9809-4ec7-a933-2eb194a10b14" />
+                <!-- End Harbour -->
+
+                <background x="1" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="2" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="3" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="4" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="5" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="11" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="12" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="13" y="0" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+
+                <background x="1" y="1" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="5" y="1" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="6" y="1" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="11" y="1" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+                <background x="1" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="3" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="4" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="5" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="6" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="11" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="12" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="13" y="2" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+                <background x="1" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="3" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="4" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="5" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="6" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="7" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="8" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="9" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="10" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="11" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="13" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="14" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="15" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+                <background x="16" y="3" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+
+<background x="1" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="2" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="6" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="7" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="4" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="1" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="2" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="9" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="10" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="12" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="14" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="16" y="5" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+
+<background x="2" y="6" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="6" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="6" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="6" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="12" y="6" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="6" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="1" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="2" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="9" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="10" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="11" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="12" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="14" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="16" y="7" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="2" y="8" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="8" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="8" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="8" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="8" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="8" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="1" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="2" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="11" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="12" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="14" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="16" y="9" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="1" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="2" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="11" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="14" y="10" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="1" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="2" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="3" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="5" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="6" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="7" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="11" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="14" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="16" y="11" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="2" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="4" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="6" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="9" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="10" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="11" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="12" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="4" y="13" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="6" y="13" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="13" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="12" y="13" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="13" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="13" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+<background x="4" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="5" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="6" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="7" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="8" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="9" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="10" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="11" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="12" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="13" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+<background x="15" y="14" backgroundDefinitionId="bc4ad4cf-09fd-4123-bc87-f4b4feddd937" />
+
+
+            </backgrounds>
+
+            <walls>
+
+                <wall facing="West" x="1" y="0" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="North" x="1" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="2" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="2" y="0" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="3" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="3" y="0" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="4" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="4" y="0" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+
+                <wall facing="North" x="5" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East" x="5" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="6" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="6" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="6" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="6" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="7" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="7" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="7" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="8" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="8" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="8" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="8" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="9" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="9" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="9" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="9" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="10" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="10" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="10" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="10" y="0" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="11" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West" x="11" y="0" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="12" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="12" y="0" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="13" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East" x="13" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="13" y="0" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+
+                <wall facing="South" x="14" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="0" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+                <wall facing="West" x="1" y="1" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="East" x="1" y="1" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="2" y="1" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="2" y="1" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="3" y="1" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="3" y="1" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="4" y="1" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East" x="4" y="1" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="4" y="1" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="5" y="1" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="6" y="1" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="6" y="1" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="7" y="1" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="7" y="1" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="8" y="1" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West" x="8" y="1" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="9" y="1" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="10" y="1" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="10" y="1" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="11" y="1" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West" x="11" y="1" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="12" y="1" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="12" y="1" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West" x="12" y="1" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="13" y="1" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East" x="13" y="1" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="13" y="1" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="14" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="14" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West" x="14" y="1" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="15" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East" x="16" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="1" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+
+                <wall facing="West"  x="1"  y="2" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="East"  x="1"  y="2" type="Blocked" wallDefinitionId="0c40a25c-5096-4ed2-bde9-f8421536af64" />
+                <wall facing="West"  x="2"  y="2" type="Blocked" wallDefinitionId="0c40a25c-5096-4ed2-bde9-f8421536af64" />
+                <wall facing="East"  x="2"  y="2" type="Blocked" wallDefinitionId="0c40a25c-5096-4ed2-bde9-f8421536af64" />
+                <wall facing="North" x="3"  y="2" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West"  x="3"  y="2" type="Blocked" wallDefinitionId="0c40a25c-5096-4ed2-bde9-f8421536af64" />
+                <wall facing="North" x="4"  y="2" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="6"   y="2" type="Door"    wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East"  x="7"  y="2" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West"  x="7"  y="2" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="7"  y="2" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West"  x="8"  y="2" type="Door" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="8"  y="2" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+
+                <wall facing="South"  x="9"  y="2" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+
+                <wall facing="South" x="10" y="2" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="East" x="10" y="2" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="West"  x="11" y="2" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="12" y="2" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="12" y="2" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="13" y="2" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="13" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+                <wall facing="South" x="14" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="14" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="15" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West" x="14" y="2" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+
+                <wall facing="East" x="1" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="1" y="3" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="East" x="2" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="2" y="3" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="2" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="3" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="5" y="3" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="7" y="3" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="8" y="3" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="North" x="9" y="3" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="9" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="10" y="3" type="Blocked" wallDefinitionId="deaa5d44-0e34-42d6-987d-7f53a516c455" />
+                <wall facing="South" x="10" y="3" type="Blocked" wallDefinitionId="0c40a25c-5096-4ed2-bde9-f8421536af64" />
+                <wall facing="East" x="11" y="3" type="Blocked" wallDefinitionId="7184efdc-cb3c-4428-9a95-4c8c37a4d3ab" />
+                <wall facing="South" x="11" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="12" y="3" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East" x="12" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="12" y="3" type="Blocked" wallDefinitionId="7184efdc-cb3c-4428-9a95-4c8c37a4d3ab" />
+                <wall facing="West" x="13" y="3" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="14" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="14" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="15" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East" x="16" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="3" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+                <wall facing="West" x="1" y="4" type="Door" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="South" x="1" y="4" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="North" x="2" y="4" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="2" y="4" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="South" x="3" y="4" type="Blocked" wallDefinitionId="3061271f-e021-4782-b51a-c4d2c16f504b" />
+                <wall facing="East" x="4" y="4" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="5" y="4" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="5" y="4" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="5" y="4" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="6" y="4" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="6" y="4" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="7" y="4" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="8" y="4" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="9" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="9" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="9" y="4" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="10" y="4" type="Blocked" wallDefinitionId="0c40a25c-5096-4ed2-bde9-f8421536af64" />
+                <wall facing="South" x="10" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="11" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="11" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East" x="12" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="12" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East" x="13" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West" x="13" y="4" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+
+                <wall facing="South" x="14" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="14" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="15" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West" x="14" y="4" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+                <wall facing="North" x="1" y="5" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="South" x="1" y="5" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West" x="1" y="5" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="North" x="2" y="5" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="North" x="3" y="5" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East" x="3" y="5" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="South" x="3" y="5" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East" x="4" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="4" y="5" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="East" x="5" y="5" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="5" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="6" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="6" y="5" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="6" y="5" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="6" y="5" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="7" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="7" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South"  x="7" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="7" y="5" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="8" y="5" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="9" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="9" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="10" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="10" y="5" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="10" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="11" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="11" y="5" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="11" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West"  x="11" y="5" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="12" y="5" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West"  x="12" y="5" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="14" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="14" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="15" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East"  x="16" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="5" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+                <wall facing="East" x="2" y="6" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West" x="2" y="6" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="North" x="3" y="6" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="South" x="3" y="6" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West" x="3" y="6" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East" x="4" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="5" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="5" y="6" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="5" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="6" y="6" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="6" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="6" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="7" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="7" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="7" y="6" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="8" y="6" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="8" y="6" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="9" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="9" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="9" y="6" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="10" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="10" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="11" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East" x="11" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="11" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West" x="12" y="6" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East" x="13" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+                <wall facing="South" x="14" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="15" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="14" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="15" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West" x="14" y="6" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+
+
+                <wall facing="North" x="1" y="7" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="South" x="1" y="7" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West" x="1" y="7" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="North" x="3" y="7" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East" x="3" y="7" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="South" x="3" y="7" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East" x="4" y="7" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="4" y="7" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="North" x="5" y="7" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="5" y="7" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="5" y="7" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="6" y="7" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="6" y="7" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="7" y="7" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East" x="7" y="7" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West" x="8" y="7" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="9" y="7" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="9" y="7" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="10" y="7" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="10" y="7" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="11" y="7" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="11" y="7" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="12" y="7" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="14" y="7" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="14" y="7" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="15" y="7" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="7" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East" x="16" y="7" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="7" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+
+
+                <wall facing="East"  x="2" y="8" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West"  x="2" y="8" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="North" x="3" y="8" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="South" x="3" y="8" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West"  x="3" y="8" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East"  x="4" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="5" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="5" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="6" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="6" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="7" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="7" y="8" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="8" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="8" y="8" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="9" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="9" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="9" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="10" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="10" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="11" y="8" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="11" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="12" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="12" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="12" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="13" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="13" y="8" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="14" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="14" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="14" y="8" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="14" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="15" y="8" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="15" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="16" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="16" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="16" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="16" y="8" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+
+                <wall facing="North" x="1" y="9" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="South" x="1" y="9" type="Blocked" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="West"  x="1" y="9" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+                <wall facing="North" x="3" y="9" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East"  x="3" y="9" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="South" x="3" y="9" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="East"  x="4" y="9" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="4" y="9" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="East"  x="5" y="9" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="5" y="9" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="6" y="9" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="6" y="9" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="7" y="9" type="Door" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="7" y="9" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="8" y="9" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="8" y="9" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="9" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="9" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="9" y="9" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="10" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="10" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="10" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="11" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="11" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="12" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="12" y="9" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="13" y="9" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="14" y="9" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="15" y="9" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="16" y="9" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="16" y="9" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East" x="16" y="9" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+
+                <wall facing="North" x="1" y="10" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="East"  x="1" y="10" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="West" x="1" y="10" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+
+                <wall facing="East"  x="2" y="10" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="South" x="2" y="10" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="West"  x="2" y="10" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="North" x="3" y="10" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="West"  x="3" y="10" type="Blocked" wallDefinitionId="e2fad4cc-8c20-40a9-858f-1ad8d6ca0bd7" />
+                <wall facing="East"  x="4" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="5" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="5" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="5" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="6" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="West"  x="6" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="7" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="7" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="East"  x="8" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="8" y="10" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="9" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="9" y="10" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="9" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="9" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="10" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="10" y="10" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="10" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="10" y="10" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="11" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="11" y="10" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="12" y="10" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="12" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="12" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="12" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="13" y="10" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="13" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="13" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="13" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="14" y="10" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="14" y="10" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="15" y="10" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="15" y="10" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="15" y="10" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="16" y="10" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="16" y="10" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="16" y="10" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+
+                <wall facing="South" x="1" y="11" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+
+                <wall facing="West" x="1" y="11" type="Blocked" wallDefinitionId="29184150-8681-4239-a024-43b45ff65873" />
+
+                <wall facing="North" x="2" y="11" type="Door" wallDefinitionId="dc1cdef1-230b-4a6d-9ca2-83cc575de3fa" />
+                <wall facing="South" x="3" y="11" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="5" y="11" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="5" y="11" type="Door" wallDefinitionId="b75bc828-ad1b-4ee0-a8c9-69a1efbd6de2" />
+                <wall facing="North" x="6" y="11" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="North" x="7" y="11" type="Blocked" wallDefinitionId="00948ce2-55ae-42a8-90ff-878c1c935c0a" />
+                <wall facing="South" x="7" y="11" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="8" y="11" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="9" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="9" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="9" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="9" y="11" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="10" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="10" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="10" y="11" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="10" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="11" y="11" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="11" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="12" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="12" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="12" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="12" y="11" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="13" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="13" y="11" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="14" y="11" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="15" y="11" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="North" x="16" y="11" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="16" y="11" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="16" y="11" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+
+                <wall facing="North" x="1" y="12" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="1" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West"  x="1" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="2" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="2" y="12" type="Blocked" wallDefinitionId="7184efdc-cb3c-4428-9a95-4c8c37a4d3ab" />
+                <wall facing="West"  x="2" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="3" y="12" type="Door" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="3" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West"  x="3" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="4" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="4" y="12" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="5" y="12" type="Door" wallDefinitionId="b75bc828-ad1b-4ee0-a8c9-69a1efbd6de2" />
+                <wall facing="East"  x="5" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="5" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="6" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="6" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="North" x="7" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="7" y="12" type="Door" wallDefinitionId="b75bc828-ad1b-4ee0-a8c9-69a1efbd6de2" />
+                <wall facing="West"  x="7" y="12" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="8" y="12" type="Door" wallDefinitionId="b75bc828-ad1b-4ee0-a8c9-69a1efbd6de2" />
+                <wall facing="North" x="9" y="12" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="9" y="12" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="10" y="12" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="10" y="12" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="11" y="12" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="11" y="12" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="12" y="12" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="12" y="12" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="12" y="12" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="12" y="12" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="13" y="12" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West"  x="13" y="12" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="15" y="12" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="15" y="12" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="16" y="12" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="East"  x="16" y="12" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="16" y="12" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+
+                <wall facing="South" x="1" y="13" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="West"  x="1" y="13" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="North" x="2" y="13" type="Blocked" wallDefinitionId="7184efdc-cb3c-4428-9a95-4c8c37a4d3ab" />
+                <wall facing="South" x="2" y="13" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="3" y="13" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="South" x="3" y="13" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="4" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="4" y="13" type="Blocked" wallDefinitionId="8c78ddff-09fc-4c1d-9b42-efcec89944df" />
+                <wall facing="East"  x="5" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="5" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="5" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="6" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="6" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="7" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="7" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="7" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="8" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="8" y="13" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="North" x="9" y="13" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="9" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="9" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="10" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="10" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="10" y="13" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="11" y="13" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="11" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="11" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="11" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="12" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West"  x="12" y="13" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East"  x="13" y="13" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East"  x="15" y="13" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="15" y="13" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East"  x="16" y="13" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="16" y="13" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+
+                <wall facing="North" x="1" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="1" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="West"  x="1" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="North" x="2" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="2" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="North" x="3" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="East"  x="3" y="14" type="Door" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="3" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="4" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West"  x="4" y="14" type="Door" wallDefinitionId="b75bc828-ad1b-4ee0-a8c9-69a1efbd6de2" />
+                <wall facing="North" x="5" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="5" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="6" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="7" y="14" type="Blocked" wallDefinitionId="5fdee183-2121-4238-8478-57457e149593" />
+                <wall facing="South" x="7" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="8" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="9" y="14" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="9" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="10" y="14" type="Door" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="10" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="North" x="11" y="14" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="11" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="12" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East"  x="13" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="South" x="13" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East"  x="15" y="14" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="15" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="West"  x="15" y="14" type="Blocked" wallDefinitionId="6512933e-b56b-426e-bd5e-e9df1e1426bf" />
+                <wall facing="East"  x="16" y="14" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="South" x="16" y="14" type="Blocked" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+                <wall facing="West"  x="16" y="14" type="Door" wallDefinitionId="27f05bac-63c9-4907-9ac0-0cf6cdb77c8c" />
+
+
+            </walls>
+
+
+            <overlays>
+
+                <overlay facing="South" x="2" y="0" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="East" x="6" y="0" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="East" x="7" y="0" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West" x="7" y="0" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="West" x="8" y="0" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="South" x="9" y="0" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East" x="10" y="0" zOrder="0" overlayDefinitionId="1c0366cf-92e9-4787-b36d-27f0e25b8510" />
+                <overlay facing="South" x="10" y="0" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West" x="11" y="0" zOrder="0" overlayDefinitionId="1c0366cf-92e9-4787-b36d-27f0e25b8510" />
+
+                <overlay facing="North" x="2" y="1" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="East" x="4" y="1" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="West" x="5" y="1" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+
+                <overlay facing="East" x="6" y="1" zOrder="0" overlayDefinitionId="1c0366cf-92e9-4787-b36d-27f0e25b8510" />
+
+                <overlay facing="East" x="7" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West" x="7" y="1" zOrder="0" overlayDefinitionId="1c0366cf-92e9-4787-b36d-27f0e25b8510" />
+
+                <overlay facing="West" x="8" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="9" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="10" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="12" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="East" x="13" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West" x="14" y="1" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="East" x="6" y="2" zOrder="0" overlayDefinitionId="1c0366cf-92e9-4787-b36d-27f0e25b8510" />
+                <overlay facing="East" x="7" y="2" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West" x="7" y="2" zOrder="0" overlayDefinitionId="1c0366cf-92e9-4787-b36d-27f0e25b8510" />
+
+
+
+                <overlay facing="West" x="8" y="2" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="12" y="2" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="12" y="2" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+
+                <overlay facing="South" x="2" y="3" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="South" x="5" y="3" zOrder="0" overlayDefinitionId="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678" />
+                <overlay facing="North" x="12" y="3" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+
+                <overlay facing="West" x="1" y="4" zOrder="0" overlayDefinitionId="b4eb3196-c1bf-4b90-ac86-fb7d5b307ead" />
+
+                <overlay facing="North" x="2" y="4" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+                <overlay facing="East" x="4" y="4" zOrder="0" overlayDefinitionId="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678" />
+                <overlay facing="North" x="5" y="4" zOrder="0" overlayDefinitionId="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678" />
+                <overlay facing="East" x="5" y="4" zOrder="0" overlayDefinitionId="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678" />
+                <overlay facing="West" x="5" y="4" zOrder="0" overlayDefinitionId="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678" />
+
+                <overlay facing="West" x="6" y="4" zOrder="0" overlayDefinitionId="ee99f1b1-4e9d-4a29-ba61-8dcafce2a678" />
+
+                <overlay facing="East" x="8" y="4" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="West" x="9" y="4" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+
+                <overlay facing="East" x="5" y="5" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East" x="6" y="5" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="6" y="5" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West" x="6" y="5" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="West" x="7" y="5" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East" x="10" y="5" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="East" x="11" y="5" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="West" x="11" y="5" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="West" x="12" y="5" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+                <overlay facing="South" x="5" y="6" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="North" x="6" y="6" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="7" y="6" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East" x="8" y="6" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="West" x="9" y="6" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+
+                <overlay facing="North" x="5" y="7" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East" x="5" y="7" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="West" x="6" y="7" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="7" y="7" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="11" y="7" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="South" x="7" y="8" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="11" y="8" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="14" y="8" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="East"  x="15" y="8" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="16" y="8" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="East"  x="5" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="6" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="7" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="East"  x="8" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="9" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="12" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="13" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="14" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="16" y="9" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+
+                <overlay facing="East"  x="9" y="10" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="East"  x="10" y="10" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="10" y="10" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="12" y="10" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="13" y="10" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="16" y="10" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="South" x="1" y="11" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="South" x="3" y="11" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+
+                <overlay facing="East"  x="8" y="11" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="9" y="11" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="10" y="11" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East"  x="11" y="11" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="12" y="11" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="North" x="1" y="12" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="North" x="3" y="12" zOrder="0" overlayDefinitionId="0206bdf8-ff2a-4a23-bee0-bdbab5568072" />
+                <overlay facing="South" x="9" y="12" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="10" y="12" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East"  x="11" y="12" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="South" x="11" y="12" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="12" y="12" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+                <overlay facing="South" x="10" y="13" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="9" y="13" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="North" x="11" y="13" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+                <overlay facing="North" x="10" y="14" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="East"  x="15" y="14" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+                <overlay facing="West"  x="16" y="14" zOrder="0" overlayDefinitionId="7e1f5f63-a162-49be-8311-7ac2dc59d69e" />
+
+
+
+
+
+            </overlays>
+
+
+
+
+
+
+            <eventTriggers>
+                <mapTrigger eventId="101" x="16" y="1" />
+                <mapTrigger eventId="109" x="14" y="1" />
+            </eventTriggers>
+            <events>
+                <event eventId="101" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="130" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'Greetings, courageous ones, I am Rolf, appointed by the council to introduce newcomers to the fair city of Phlan.  If you will accompany me, I will start the tour.'</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="130" eventType="Guided Tour Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="102" />
+                    </standardChain>
+                    <eventDetails>
+                        <guidedTourEventDetails stepDelay="1000">
+                            <steps>
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Left" />
+                                <step direction="Front" />
+                            </steps>
+                        </guidedTourEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="102" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="131" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'You now face an entrance to the temple of Tyr.  There are three temples in Phlan:  Tyr's, Sune's, and Tempus.  Tyr's is the largest and houses Bishop Braccio.  If you will turn around now, '</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="131" eventType="Guided Tour Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="103" />
+                    </standardChain>
+                    <eventDetails>
+                        <guidedTourEventDetails stepDelay="1000">
+                            <steps>
+                                <step direction="Right" />
+                                <step direction="Right" />
+                            </steps>
+                        </guidedTourEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="103" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="132" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'You will see the entrance to the passenger dock area we just departed.  Few ships dare the perilous passage here, but the council is developing a plan to open up the sea lanes.  Please follow me.'</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="132" eventType="Guided Tour Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="104" />
+                    </standardChain>
+                    <eventDetails>
+                        <guidedTourEventDetails stepDelay="1000">
+                            <steps>
+                                <step direction="Left" />
+                                <step direction="Front" />
+                                <step direction="Left" />
+                                <step direction="Front" />
+                                <step direction="Right" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                                <step direction="Right" />
+                                <step direction="Front" />
+                                <step direction="Right" />
+                            </steps>
+                        </guidedTourEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="104" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="133" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'Behind these doors are the special training schools where adventurers increase their skills.  Let us now go to the city's most important building.'</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="133" eventType="Guided Tour Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="105" />
+                    </standardChain>
+                    <eventDetails>
+                        <guidedTourEventDetails stepDelay="1000">
+                            <steps>
+                                <step direction="Right" />
+                                <step direction="Right" />
+                                <step direction="Front" />
+                                <step direction="Left" />
+                                <step direction="Front" />
+                            </steps>
+                        </guidedTourEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="105" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="134" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'We are just outside the city hall.  Proclamations are posted on these walls.  Inside, the city clerk awards the council's commissions.  Commissions are the quickest way to fame and fortune.'</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="134" eventType="Guided Tour Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="106" />
+                    </standardChain>
+                    <eventDetails>
+                        <guidedTourEventDetails stepDelay="1000">
+                            <steps>
+                                <step direction="Right" />
+                                <step direction="Front" />
+                                <step direction="Left" />
+                                <step direction="Front" />
+                                <step direction="Right" />
+                                <step direction="Front" />
+                                <step direction="Front" />
+                            </steps>
+                        </guidedTourEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="106" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="135" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'On your right is one of the entrance's to Sune's temple.  As with all Phlan's temples, various clerical services are offered inside.  On your left is an entrance to the city park.'</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="135" eventType="Guided Tour Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="107" />
+                    </standardChain>
+                    <eventDetails>
+                        <guidedTourEventDetails stepDelay="1000">
+                            <steps>
+                                <step direction="Front" />
+                            </steps>
+                        </guidedTourEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="107" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="108" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'Beyond this gate are the monster-ridden areas of the old city we are slowly preparing for settlement.  The council offers a generous reward to those who clear areas of monsters.'</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="108" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>'Our tour is ended.  Again, let me urge you to apply to the city clerk for a commission.  Good-bye and good fortune.' (You are on your own now)</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="109" eventType="Give Treasure Event" backupWhenDone="false" maxFireCount="1">
+                    <eventDetails>
+                        <giveTreasureEventDetails giveExperience="true" regeneratePerInstance="true">
+                            <text>The party gets some treasure!</text>
+                            <treasure>
+                                <items>
+                                    <item id="Light Quarrel" isIdentified="false" bundleSize="19" />
+                                    <item id="Wand of Fire" isIdentified="true" charges="19" />
+                                    <item id="Quarter Staff" isIdentified="false" />
+                                </items>
+                                <currencies>
+                                    <currency name="Gold" quantity="253" />
+                                    <currency name="Silver" quantity="58" />
+                                </currencies>
+                            </treasure>
+                        </giveTreasureEventDetails>
+                    </eventDetails>
+                </event>
+            </events>
+
+        </level>
+
+        <level id="000ad729-0a26-45e4-926a-297036a99000" levelType="3d" name="A Test Dungeon" height="15" width="15">
+            <backgrounds>
+            </backgrounds>
+            <walls>
+            </walls>
+            <overlays></overlays>
+            <eventTriggers>
+            </eventTriggers>
+            <events>
+
+                <event eventId="1" eventType="Text Event" backupWhenDone="true" maxFireCount="Unlimited">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="2" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="false" clearTextOnEnter="false" clearImageOnEnter="false" mustPressReturn="false">
+                            <text>This is a page of text that describes something that happens in this adventure.  This text is much more descriptive that just using Lorum Ipsum which would be difficult to read and identify problems.  This should be a multi line event that illustrates the way that the text renderer is able to easily display multiple lines of text with a slick rendering style.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar, metus eu placerat congue, nunc quam condimentum risus, nec aliquam erat urna sed metus. Vivamus vehicula, dolor non consequat congue, enim felis commodo orci, eget vestibulum erat est viverra dui. Donec iaculis tristique nulla ut malesuada.  Vivamus commodo interdum mi, at cursus sapien porttitor porttitor. Praesent vel enim non lacus.  That text was some latin and this text should be overflow text.  This is a page of text that describes something that happens in this adventure.  This text is much more descriptive that just using Lorum Ipsum which would be difficult to read and identify problems.  This should be a multi line event that illustrates the way that the text renderer is able to easily display multiple lines of text with a slick rendering style.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar, metus eu placerat congue, nunc quam condimentum risus, nec aliquam erat urna sed metus. Vivamus vehicula, dolor non consequat congue, enim felis commodo orci, eget vestibulum erat est viverra dui. Donec iaculis tristique nulla ut malesuada.  Vivamus commodo interdum mi, at cursus sapien porttitor porttitor. Praesent vel enim non lacus.  That text was some latin and this text should be overflow text.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="2" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="false" clearTextOnEnter="true" clearImageOnEnter="false" mustPressReturn="true">
+                            <text>  This is a second event displaying which is appended to the last event.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="3" eventType="Question - Yes/No" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <questionYesNoEventDetails>
+                            <questionText>This is a yes or no question... How do you respond?</questionText>
+                            <onYesText>You selected yes!  Good for you!</onYesText>
+                            <onNoText>Ohh... You selected no!  Maybe that wasn't a good idea.</onNoText>
+                            <afterYes>
+                                <postQuestionEventAction backupWhenDone="false" returnToQuestion="false" />
+                            </afterYes>
+                            <afterNo>
+                                <postQuestionEventAction backupWhenDone="false" returnToQuestion="false" />
+<!--
+                             <postQuestionEventAction backupWhenDone="true" returnToQuestion="false">
+                                <chain eventId="" />
+                             </postQuestionEventAction>
+-->
+                            </afterNo>
+                        </questionYesNoEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="4" eventType="Picture Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Event Happens">
+                        <chain eventId="5" />
+                    </standardChain>
+                    <eventDetails>
+                    <simplePictureEventDetails imageName="testimage1.png" />
+<!--
+        <pictureEventDetails initialImageName="testimage2.png" finalImageName="" initialOpacity="100" blendDuration="0" />
+-->
+                    </eventDetails>
+                </event>
+                <event eventId="5" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>A knight says hello to you.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="6" eventType="Relocate Party Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <relocatePartyEventDetails fireWhen="Party Is In">
+                            <transferQuestion askTransferQuestion="true" transferOnYes="true">
+                                <questionText>Are you sure you would like to relocate the party?</questionText>
+                            </transferQuestion>
+                            <destination levelId="">
+                                <partyPosition x="6" y="9" facing="North" />
+                            </destination>
+                            <transferText>You relocate the party</transferText>
+                        </relocatePartyEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="7" eventType="Question - Button" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <questionButtonEventDetails>
+                            <questionText>What would you like to drink?</questionText>
+                            <options>
+                                <option label="Ale">
+                                    <postQuestionEventAction backupWhenDone="true" returnToQuestion="true">
+                                        <chain eventId="8" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Wine">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="9" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Port">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="10" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Meed">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="11" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Shlag">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="12" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Leave">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="false" />
+                                </option>
+                            </options>
+                        </questionButtonEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="8" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>${var.selectedCharacterName} orders Ale... ${var.selectedCharacterSubjectivePronoun} chugs it in two gulps and wipes the dribble from ${var.selectedCharacterPossessivePronoun} chin.  Mmmmm.</text>
+
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="9" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Wine... Mmmmm.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="10" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Port... Mmmmm.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="11" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Meed... Mmmmm.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="12" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Shlag... Mmmmm.</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="13" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="1000" allowPrimeRequisiteBonus="true" giveTo="Selected Character" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>${var.selectedCharacterName} gets experience for ${var.selectedCharacterPossessivePronoun} heroic deeds!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="14" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="600" giveTo="Distributed Equally" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>Everybody gets experience!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="15" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="10d10+100" giveTo="Entire Party - One Roll" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>Everybody gets experience!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="16" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="10d10+100" giveTo="Entire Party - Roll Each" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>Everybody gets experience!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>
+
+
+                <event eventId="17" eventType="Damage Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <damageEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>Ouch!!! That hurts!</text>
+                            <damage numberOfAttacks="1" damageExpression="5d6+4" attackIsOn="Entire Party" percentChanceOnEach="45">
+                                <damageDetails savingEffect="Save for No Damage" savingType="Paralyzation, Poison or Death Magic" savingModifier="0" />
+                            </damage>
+                        </damageEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="18" eventType="Attack Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <attackEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>Ouch!!! That hurts!</text>
+                            <damage numberOfAttacks="1" damageExpression="5d6+4" attackIsOn="Chance on Each Character" percentChanceOnEach="45">
+                                <attackDetails attackThac0="20" />
+                            </damage>
+                        </attackEventDetails>
+                    </eventDetails>
+                </event>
+
+                <!--
+
+                <event eventId="19" eventType="Password Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <passwordEventDetails password="secret" numberOfAttempts="1">
+                            <text>You need to say the secret password!</text>
+                            <onSuccessText>You got it right!</onSuccessText>
+                            <onFailureText>Ohh... You're wrong! Try Again!</onFailureText>
+                            <onLastAttemptFailureText>You're still wrong!  I don't have time for this.</onLastAttemptFailureText>
+                            <afterSuccess>
+                                <postEventAction backupWhenDone="false" />
+                            </afterSuccess>
+                            <afterFailure>
+                                <postEventAction backupWhenDone="false">
+                                    <chain eventId="4" />
+                                </postEventAction>
+                            </afterFailure>
+                        </passwordEventDetails>
+                    </eventDetails>
+                </event>
+
+                -->
+
+
+                <event eventId="20" eventType="Tavern Event" backupWhenDone="true" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <tavernEventDetails clearTextBeforeEvent="true">
+                            <text>The party enters a crowded, rowdy tavern.</text>
+                            <tavernFights allow="true">
+                                <!--<chain eventId="21" />-->
+                            </tavernFights>
+                            <tavernTales displayInOrder="false">
+                                <tavernTale>This is a tavern tale</tavernTale>
+                                <tavernTale>This is a second tavern tale</tavernTale>
+                                <tavernTale>This is a third tavern tale</tavernTale>
+                                <tavernTale>This is a fourth tavern tale</tavernTale>
+                                <tavernTale>This is a fifth tavern tale</tavernTale>
+                            </tavernTales>
+                            <drinks allow="true">
+                                <drinkText>The party drinks ${event.drinkName}</drinkText>
+                                <drink name="Ale" strength="10" />
+                                <drink name="Mead" strength="15" />
+                                <drink name="Wine" strength="20" />
+                                <drink name="Whisky" strength="50" />
+                                <drunk threshold="70">
+                                    <chain eventId="22" />
+                                </drunk>
+                            </drinks>
+                        </tavernEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="21" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You have a fight!</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="22" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You get drunk...</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+
+
+
+                <event eventId="23" eventType="Vault Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <vaultEventDetails vaultId="1"  clearTextBeforeEvent="true">
+                            <text>You enter a vault</text>
+                        </vaultEventDetails>
+                    </eventDetails>
+                </event>
+
+
+
+                <event eventId="24" eventType="Camp Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <campEventDetails clearTextBeforeEvent="true">
+                            <text>You setup camp</text>
+                        </campEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="25" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>&#160;This is a line of text that should have a new line.<br />
+                            &#160;&#160;&#160;This is the new line...<br/>This is the third line.<br/>This is the fourth line.<br />
+                            This is the fifth line.<br />This is the sixth line<br />This is the sevent line<br />
+                            This is the eight line!</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+
+                <event eventId="26" eventType="Who Tries Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <whoTriesEventDetails
+                            clearTextBeforeEvent="true"
+                            numberOfAttempts="1"
+                            checkAgainst="Attribute"
+                            checkAgainstProperty="Charisma"
+                            checkType="Must Have"
+                            primaryCheckValue="17"> <!-- checkAgainst="Ability" checkType="Die Roll" diceExpression="1D100" checkAgainstProperty="Move Silently" -->
+                            <text>Who would like to try this?</text>
+
+                            <tryAgainText>That attempt did not succeed!</tryAgainText>
+                            <onFailureText>You failed!!</onFailureText>
+                            <onSuccessText>You succeed!</onSuccessText>
+                            <afterSuccess>
+                                <postQuestionEventAction backupWhenDone="false">
+                                    <chain eventId="27" />
+                                </postQuestionEventAction>
+                            </afterSuccess>
+                            <afterFailure>
+                                <postQuestionEventAction backupWhenDone="false" />
+                            </afterFailure>
+                        </whoTriesEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="27" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>This is a chain after ${var.selectedCharacterName} succeeded!</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="28" eventType="Who Tries Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <whoTriesEventDetails
+                            clearTextBeforeEvent="true"
+                            numberOfAttempts="3"
+                            checkAgainst="Attribute"
+                            checkAgainstProperty="Constitution"
+                            checkType="Dice Roll"
+                            diceExpression="1D1"> <!-- checkAgainst="Ability" checkType="Die Roll" diceExpression="1D100" checkAgainstProperty="Move Silently" -->
+                            <text>Who would like to try this?</text>
+
+                            <tryAgainText>${var.selectedCharacterName} did not succeed!  Try again!</tryAgainText>
+                            <onFailureText>You failed!!</onFailureText>
+                            <onSuccessText>You succeed!</onSuccessText>
+                            <afterSuccess>
+                                <postQuestionEventAction backupWhenDone="true">
+                                    <chain eventId="27" />
+                                </postQuestionEventAction>
+                            </afterSuccess>
+                            <afterFailure>
+                                <postQuestionEventAction backupWhenDone="false">
+                                    <chain eventId="29" />
+                                </postQuestionEventAction>
+                            </afterFailure>
+                        </whoTriesEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="29" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>This is a chain after ${var.selectedCharacterName} failed!</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="30" eventType="Who Pays Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <whoPaysEventDetails numberOfAttempts="1" requiredCurrency="Gold" willChangeMoney="true">
+                            <text>Who will pay?</text>
+                            <tryAgainText>${var.selectedCharacterName} does not have enough ${event.currencyType}.  Who Will try again?</tryAgainText>
+                            <onSuccessText>${var.selectedCharacterName} pays the ${event.currencyAmount} ${event.currencyType}.</onSuccessText>
+                            <onFailureText>${var.selectedCharacterName} is too poor!  You Fail!</onFailureText>
+                            <afterSuccess>
+                                <postQuestionEventAction backupWhenDone="false">
+                                    <chain eventId="32" />
+                                </postQuestionEventAction>
+                            </afterSuccess>
+                            <afterFailure>
+                                <postQuestionEventAction backupWhenDone="false">
+                                    <chain eventId="31" />
+                                </postQuestionEventAction>
+                            </afterFailure>
+                        </whoPaysEventDetails>
+                    </eventDetails>
+                </event>
+
+
+                <event eventId="31" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>This is a chain after ${var.selectedCharacterName} failed!</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+                <event eventId="32" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>This is a chain after ${var.selectedCharacterName} succeeded!</text>
+                        </textEventDetails>
+                    </eventDetails>
+                </event>
+
+            </events>
+        </level>
+
+    </levels>
+
+</jua-adventure>

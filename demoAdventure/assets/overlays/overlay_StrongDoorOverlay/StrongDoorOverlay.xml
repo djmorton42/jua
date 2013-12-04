@@ -1,0 +1,14 @@
+<jua_overlay name="StrongDoorOverlay" id="1c0366cf-92e9-4787-b36d-27f0e25b8510">
+  <overlayset>
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="StrongDoorOverlay_close_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="StrongDoorOverlay_near_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="StrongDoorOverlay_far_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="StrongDoorOverlay_far_front_secondary.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="StrongDoorOverlay_close_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="StrongDoorOverlay_close_left.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="StrongDoorOverlay_near_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="StrongDoorOverlay_near_left.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="StrongDoorOverlay_far_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="StrongDoorOverlay_far_left.png" />
+  </overlayset>
+</jua_overlay>

@@ -1,0 +1,489 @@
+<jua-adventure name="JUA Demo Adventure" version="1.0">
+    <authors>
+        <author>Daniel Morton</author>
+    </authors>
+    
+    <game-start levelId="000ad729-0a26-45e4-926a-297036a99000" x="5" y="5" facing="East" />
+    <default-border id="18aad729-0a26-45e4-926a-297036a99cc9" />
+
+    <classes>
+        <class name="Fighter">
+            <primeRequisites>
+                <ability name="Strength" />
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Strength" minimum="9" />
+            </abilityMinimums>
+            <levels advancedRankAdditionalXpRequired="250000" advancedRankAdditionalHitPoints="3">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d10" />
+                <level rank="2" xpRequired="2000" additionalHitPoints="1d10" />
+                <level rank="3" xpRequired="4000" additionalHitPoints="1d10" />
+                <level rank="4" xpRequired="8000" additionalHitPoints="1d10" />
+                <level rank="5" xpRequired="16000" additionalHitPoints="1d10" />
+                <level rank="6" xpRequired="32000" additionalHitPoints="1d10" />
+                <level rank="7" xpRequired="64000" additionalHitPoints="1d10" />
+                <level rank="8" xpRequired="125000" additionalHitPoints="1d10" />
+                <level rank="9" xpRequired="250000" additionalHitPoints="1d10" />                
+            </levels>
+        </class>
+        <class name="Paladin">
+            <primeRequisites>
+                <ability name="Strength" />
+                <ability name="Charisma" />                
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Strength" minimum="12" />
+                <ability name="Constitution" minimum="9" />                
+                <ability name="Wisdom" minimum="13" />
+                <ability name="Charisma" minimum="17" />
+            </abilityMinimums>        
+            <levels advancedRankAdditionalXpRequired="300000" advancedRankAdditionalHitPoints="3">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d10" />
+                <level rank="2" xpRequired="2250" additionalHitPoints="1d10" />
+                <level rank="3" xpRequired="4500" additionalHitPoints="1d10" />
+                <level rank="4" xpRequired="9000" additionalHitPoints="1d10" />
+                <level rank="5" xpRequired="18000" additionalHitPoints="1d10" />
+                <level rank="6" xpRequired="36000" additionalHitPoints="1d10" />
+                <level rank="7" xpRequired="75000" additionalHitPoints="1d10" />
+                <level rank="8" xpRequired="150000" additionalHitPoints="1d10" />
+                <level rank="9" xpRequired="300000" additionalHitPoints="1d10" />                
+            </levels>
+        </class>
+        <class name="Ranger">
+            <primeRequisites>
+                <ability name="Strength" />
+                <ability name="Dexterity" />                
+                <ability name="Wisdom" />                
+            </primeRequisites>
+            <abilityMinimums>
+                <ability name="Strength" minimum="13" />
+                <ability name="Dexterity" minimum="13" />                
+                <ability name="Constitution" minimum="14" />
+                <ability name="Wisdom" minimum="14" />
+            </abilityMinimums>                
+            <levels advancedRankAdditionalXpRequired="300000" advancedRankAdditionalHitPoints="3">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d10" />
+                <level rank="2" xpRequired="2250" additionalHitPoints="1d10" />
+                <level rank="3" xpRequired="4500" additionalHitPoints="1d10" />
+                <level rank="4" xpRequired="9000" additionalHitPoints="1d10" />
+                <level rank="5" xpRequired="18000" additionalHitPoints="1d10" />
+                <level rank="6" xpRequired="36000" additionalHitPoints="1d10" />
+                <level rank="7" xpRequired="75000" additionalHitPoints="1d10" />
+                <level rank="8" xpRequired="150000" additionalHitPoints="1d10" />
+                <level rank="9" xpRequired="300000" additionalHitPoints="1d10" />                
+            </levels>
+        </class>
+        <class name="Mage">
+            <primeRequisites>
+                <ability name="Intelligence" />
+            </primeRequisites>        
+            <abilityMinimums>
+                <ability name="Intelligence" minimum="9" />
+            </abilityMinimums>                        
+            <levels advancedRankAdditionalXpRequired="375000" advancedRankAdditionalHitPoints="1">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d4" />
+                <level rank="2" xpRequired="2500" additionalHitPoints="1d4" />
+                <level rank="3" xpRequired="5000" additionalHitPoints="1d4" />
+                <level rank="4" xpRequired="10000" additionalHitPoints="1d4" />
+                <level rank="5" xpRequired="20000" additionalHitPoints="1d4" />
+                <level rank="6" xpRequired="40000" additionalHitPoints="1d4" />
+                <level rank="7" xpRequired="60000" additionalHitPoints="1d4" />
+                <level rank="8" xpRequired="90000" additionalHitPoints="1d4" />
+                <level rank="9" xpRequired="135000" additionalHitPoints="1d4" />                
+                <level rank="10" xpRequired="250000" additionalHitPoints="1d4" />                
+                <level rank="11" xpRequired="375000" additionalHitPoints="1" />                
+            </levels>
+        </class>                     
+        <class name="Cleric">
+            <primeRequisites>
+                <ability name="Wisdom" />                
+            </primeRequisites>        
+            <abilityMinimums>
+                <ability name="Wisdom" minimum="9" />
+            </abilityMinimums>                
+            <levels advancedRankAdditionalXpRequired="275000" advancedRankAdditionalHitPoints="2">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d8" />
+                <level rank="2" xpRequired="1500" additionalHitPoints="1d8" />
+                <level rank="3" xpRequired="3000" additionalHitPoints="1d8" />
+                <level rank="4" xpRequired="6000" additionalHitPoints="1d8" />
+                <level rank="5" xpRequired="13000" additionalHitPoints="1d8" />
+                <level rank="6" xpRequired="27500" additionalHitPoints="1d8" />
+                <level rank="7" xpRequired="55000" additionalHitPoints="1d8" />
+                <level rank="8" xpRequired="110000" additionalHitPoints="1d8" />
+                <level rank="9" xpRequired="225000" additionalHitPoints="1d8" />                                
+            </levels>
+        </class>        
+        <class name="Druid">
+            <primeRequisites>
+                <ability name="Wisdom" />                
+                <ability name="Charisma" />                
+            </primeRequisites>        
+            <abilityMinimums>
+                <ability name="Wisdom" minimum="12" />
+                <ability name="Charisma" minimum="15" />
+            </abilityMinimums>                
+            <levels advancedRankAdditionalXpRequired="500000" advancedRankAdditionalHitPoints="2">
+                <level rank="1" xpRequired="0" additionalHitPoints="1d8" />
+                <level rank="2" xpRequired="2000" additionalHitPoints="1d8" />
+                <level rank="3" xpRequired="4000" additionalHitPoints="1d8" />
+                <level rank="4" xpRequired="7500" additionalHitPoints="1d8" />
+                <level rank="5" xpRequired="12500" additionalHitPoints="1d8" />
+                <level rank="6" xpRequired="20000" additionalHitPoints="1d8" />
+                <level rank="7" xpRequired="35000" additionalHitPoints="1d8" />
+                <level rank="8" xpRequired="60000" additionalHitPoints="1d8" />
+                <level rank="9" xpRequired="90000" additionalHitPoints="1d8" />
+                <level rank="10" xpRequired="125000" additionalHitPoints="2" />
+                <level rank="11" xpRequired="200000" additionalHitPoints="2" />
+                <level rank="12" xpRequired="300000" additionalHitPoints="2" />
+                <level rank="13" xpRequired="750000" additionalHitPoints="2" />
+                <level rank="14" xpRequired="1500000" additionalHitPoints="2" />
+                <level rank="15" xpRequired="3000000" additionalHitPoints="2" />                
+            </levels>
+        </class>        
+        <class name="Thief">
+            <primeRequisites>
+                <ability name="Dexterity" />                
+            </primeRequisites>        
+            <abilityMinimums>
+                <ability name="Dexterity" minimum="9" />
+            </abilityMinimums>                
+            <levels advancedRankAdditionalXpRequired="220000" advancedRankAdditionalHitPoints="2">            
+                <level rank="1" xpRequired="0" additionalHitPoints="1d6" />
+                <level rank="2" xpRequired="1250" additionalHitPoints="1d6" />
+                <level rank="3" xpRequired="2500" additionalHitPoints="1d6" />
+                <level rank="4" xpRequired="5000" additionalHitPoints="1d6" />
+                <level rank="5" xpRequired="10000" additionalHitPoints="1d6" />
+                <level rank="6" xpRequired="20000" additionalHitPoints="1d6" />
+                <level rank="7" xpRequired="40000" additionalHitPoints="1d6" />
+                <level rank="8" xpRequired="70000" additionalHitPoints="1d6" />
+                <level rank="9" xpRequired="110000" additionalHitPoints="1d6" />                                               
+                <level rank="10" xpRequired="160000" additionalHitPoints="1d6" />
+                <level rank="11" xpRequired="220000" additionalHitPoints="2" />
+            </levels>
+        </class>
+        <class name="Bard">
+            <primeRequisites>
+                <ability name="Dexterity" />                
+                <ability name="Charisma" />                
+            </primeRequisites>        
+            <abilityMinimums>
+                <ability name="Dexterity" minimum="12" />
+                <ability name="Intelligence" minimum="13" />
+                <ability name="Charisma" minimum="15" />
+            </abilityMinimums>                
+            <levels advancedRankAdditionalXpRequired="220000" advancedRankAdditionalHitPoints="2">            
+                <level rank="1" xpRequired="0" additionalHitPoints="1d6" />
+                <level rank="2" xpRequired="1250" additionalHitPoints="1d6" />
+                <level rank="3" xpRequired="2500" additionalHitPoints="1d6" />
+                <level rank="4" xpRequired="5000" additionalHitPoints="1d6" />
+                <level rank="5" xpRequired="10000" additionalHitPoints="1d6" />
+                <level rank="6" xpRequired="20000" additionalHitPoints="1d6" />
+                <level rank="7" xpRequired="40000" additionalHitPoints="1d6" />
+                <level rank="8" xpRequired="70000" additionalHitPoints="1d6" />
+                <level rank="9" xpRequired="110000" additionalHitPoints="1d6" />                                               
+                <level rank="10" xpRequired="160000" additionalHitPoints="1d6" />
+                <level rank="11" xpRequired="220000" additionalHitPoints="2" />
+            </levels>
+        </class>        
+    </classes>
+        
+    <levels>
+        <level id="000ad729-0a26-45e4-926a-297036a99000" levelType="3d" name="A Test Dungeon" height="15" width="15">
+            <backgrounds>
+                <background x="5" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="4" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="3" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="3" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="7" y="3" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="8" y="3" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="8" y="2" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="8" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="9" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="10" y="1" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="2" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="3" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="4" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="9" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />                
+                <background x="8" y="5" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="6" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="7" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="10" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="9" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="8" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="7" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409c" />
+                <background x="6" y="8" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="6" y="7" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="7" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />
+                <background x="5" y="6" backgroundDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409b" />                             
+            </backgrounds>
+            <walls>
+                <wall facing="West" x="5" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East" x="5" y="5" type="Blocked" wallDefinitionId="39bb2dbd-c683-495a-9062-574e2f2739f0" />
+                <wall facing="West" x="5" y="4" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="East" x="5" y="4" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="West" x="5" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="North" x="5" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />
+                <wall facing="South" x="6" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="North" x="6" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                              
+                <wall facing="South" x="7" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="North" x="7" y="3" type="Blocked" wallDefinitionId="1ec8318a-1895-40ca-a25c-7cbfc5553912" />                                
+                <wall facing="South" x="8" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="8" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                
+                <wall facing="West" x="8" y="2" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="8" y="2" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="West" x="8" y="1" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="North" x="8" y="1" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="South" x="9" y="1" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="North" x="9" y="1" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                           
+                <wall facing="North" x="10" y="1" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="10" y="1" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="West" x="10" y="2" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="10" y="2" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                
+                <wall facing="West" x="10" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="10" y="3" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="West" x="10" y="4" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="10" y="4" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="East" x="10" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="North" x="9" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="South" x="9" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                
+                <wall facing="North" x="8" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="South" x="8" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="West" x="8" y="5" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                
+                <wall facing="West" x="10" y="6" type="Blocked" wallDefinitionId="1ec8318a-1895-40ca-a25c-7cbfc5553912" />                                
+                <wall facing="East" x="10" y="6" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="West" x="10" y="7" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="10" y="7" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                
+                <wall facing="South" x="10" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="East" x="10" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="North" x="9" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="South" x="9" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                                
+                <wall facing="North" x="8" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="South" x="8" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                            
+                <wall facing="North" x="7" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="South" x="7" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                               
+                <wall facing="West" x="6" y="8" type="Blocked" wallDefinitionId="162bc150-4a5c-4ae8-a432-8ddf0505409a" />                                
+                <wall facing="South" x="6" y="8" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                                
+                <wall facing="North" x="6" y="7" type="Blocked" wallDefinitionId="39bb2dbd-c683-495a-9062-574e2f2739f0" />                                
+                <wall facing="East" x="6" y="7" type="Blocked" wallDefinitionId="39bb2dbd-c683-495a-9062-574e2f2739f0" />                                                
+                <wall facing="West" x="5" y="7" type="Blocked" wallDefinitionId="39bb2dbd-c683-495a-9062-574e2f2739f0" />                                
+                <wall facing="South" x="5" y="7" type="Blocked" wallDefinitionId="39bb2dbd-c683-495a-9062-574e2f2739f0" />                                                
+                <wall facing="East" x="5" y="6" type="Blocked" wallDefinitionId="18aad729-0a26-45e4-926a-297036a99cc5" />                                
+                <wall facing="West" x="5" y="6" type="Blocked" wallDefinitionId="1ec8318a-1895-40ca-a25c-7cbfc5553912" />                                                                                
+            </walls>
+            <eventTriggers>
+                <mapTrigger eventId="1" x="5" y="4" />               
+                <mapTrigger eventId="13" x="7" y="8" />               
+                <mapTrigger eventId="14" x="8" y="8" />                               
+
+                <mapTrigger eventId="15" x="9" y="8" />                               
+                <mapTrigger eventId="16" x="10" y="8" />                                                                               
+                <!--
+                <mapTrigger eventId="3" x="5" y="6" />                
+                <mapTrigger eventId="4" x="5" y="7" />
+                -->
+                <mapTrigger eventId="7" x="6" y="7" />
+            </eventTriggers>
+            <events>                    
+                <event eventId="1" eventType="Text Event" backupWhenDone="true" maxFireCount="Unlimited">
+                    <standardChain chainCondition="Always">
+                        <chain eventId="2" />
+                    </standardChain>
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="false" clearTextOnEnter="false" clearImageOnEnter="false" mustPressReturn="false">
+                            <text>This is a page of text that describes something that happens in this adventure.  This text is much more descriptive that just using Lorum Ipsum which would be difficult to read and identify problems.  This should be a multi line event that illustrates the way that the text renderer is able to easily display multiple lines of text with a slick rendering style.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar, metus eu placerat congue, nunc quam condimentum risus, nec aliquam erat urna sed metus. Vivamus vehicula, dolor non consequat congue, enim felis commodo orci, eget vestibulum erat est viverra dui. Donec iaculis tristique nulla ut malesuada.  Vivamus commodo interdum mi, at cursus sapien porttitor porttitor. Praesent vel enim non lacus.  That text was some latin and this text should be overflow text.  This is a page of text that describes something that happens in this adventure.  This text is much more descriptive that just using Lorum Ipsum which would be difficult to read and identify problems.  This should be a multi line event that illustrates the way that the text renderer is able to easily display multiple lines of text with a slick rendering style.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut pulvinar, metus eu placerat congue, nunc quam condimentum risus, nec aliquam erat urna sed metus. Vivamus vehicula, dolor non consequat congue, enim felis commodo orci, eget vestibulum erat est viverra dui. Donec iaculis tristique nulla ut malesuada.  Vivamus commodo interdum mi, at cursus sapien porttitor porttitor. Praesent vel enim non lacus.  That text was some latin and this text should be overflow text.</text>
+                        </textEventDetails>                        
+                    </eventDetails>
+                </event>
+                <event eventId="2" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="false" clearTextOnEnter="true" clearImageOnEnter="false" mustPressReturn="true">
+                            <text>  This is a second event displaying which is appended to the last event.</text>
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>
+                <event eventId="3" eventType="Question - Yes/No" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <questionYesNoEventDetails>
+                            <questionText>This is a yes or no question... How do you respond?</questionText>
+                            <onYesText>You selected yes!  Good for you!</onYesText>
+                            <onNoText>Ohh... You selected no!  Maybe that wasn't a good idea.</onNoText>
+                            <afterYes>
+                                <postQuestionEventAction backupWhenDone="false" returnToQuestion="false" />
+                            </afterYes>
+                            <afterNo>
+                                <postQuestionEventAction backupWhenDone="false" returnToQuestion="false" />
+<!--
+                             <postQuestionEventAction backupWhenDone="true" returnToQuestion="false">
+                                <chain eventId="" />
+                             </postQuestionEventAction>
+-->                                
+                            </afterNo>
+                        </questionYesNoEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="4" eventType="Picture Event" backupWhenDone="false" maxFireCount="1">
+                    <standardChain chainCondition="Event Happens">
+                        <chain eventId="5" />
+                    </standardChain>
+                    <eventDetails>
+                    <simplePictureEventDetails imageName="testimage1.png" />                    
+<!--                
+        <pictureEventDetails initialImageName="testimage2.png" finalImageName="" initialOpacity="100" blendDuration="0" />
+-->
+                    </eventDetails>
+                </event>
+                <event eventId="5" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>A knight says hello to you.</text>
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>
+                
+                <event eventId="6" eventType="Relocate Party Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <relocatePartyEventDetails fireWhen="Party Is In">
+                            <transferQuestion askTransferQuestion="true" transferOnYes="true">
+                                <questionText>Are you sure you would like to relocate the party?</questionText>
+                            </transferQuestion>
+                            <destination levelId="">
+                                <partyPosition x="6" y="9" facing="North" />                                    
+                            </destination>
+                            <transferText>You relocate the party</transferText>
+                        </relocatePartyEventDetails>
+                    </eventDetails>
+                </event>
+                
+                <event eventId="7" eventType="Question - Button" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <questionButtonEventDetails>
+                            <questionText>What would you like to drink?</questionText>
+                            <options>
+                                <option label="Ale">
+                                    <postQuestionEventAction backupWhenDone="true" returnToQuestion="true">
+                                        <chain eventId="8" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Wine">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="9" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Port">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="10" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Meed">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="11" />
+                                    </postQuestionEventAction>
+                                </option>
+                                <option label="Shlag">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="true">
+                                        <chain eventId="12" />
+                                    </postQuestionEventAction> 
+                                </option>
+                                <option label="Leave">
+                                    <postQuestionEventAction backupWhenDone="false" returnToQuestion="false" />                                                                       
+                                </option>                                
+                            </options>
+                        </questionButtonEventDetails>
+                    </eventDetails>
+                </event>
+                
+                <event eventId="8" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>${var.selectedCharacterName} orders Ale... ${var.selectedCharacterSubjectivePronoun} chugs it in two gulps and wipes the dribble from ${var.selectedCharacterPossessivePronoun} chin.  Mmmmm.</text> 
+                            
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>                                              
+                <event eventId="9" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Wine... Mmmmm.</text>
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>
+                <event eventId="10" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Port... Mmmmm.</text>
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>
+                <event eventId="11" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Meed... Mmmmm.</text>
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>
+                <event eventId="12" eventType="Text Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <textEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>You order Shlag... Mmmmm.</text>
+                        </textEventDetails>                        
+                    </eventDetails>                    
+                </event>
+                <event eventId="13" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="750" giveTo="Selected Character" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>${var.selectedCharacterName} gets experience for ${var.selectedCharacterPossessivePronoun} heroic deeds!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>
+                <event eventId="14" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="600" giveTo="Distributed Equally" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>Everybody gets experience!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>                
+                <event eventId="15" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="10d10+100" giveTo="Entire Party - One Roll" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>Everybody gets experience!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>                
+                <event eventId="16" eventType="Gain Experience" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <gainExperienceEventDetails experiencePointsExpression="10d10+100" giveTo="Entire Party - Roll Each" includeDisabledPartyMembers="false" clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true"> <!-- Entire Party, Selected Character, Distributed Evenly  -->
+                            <text>Everybody gets experience!</text>
+                        </gainExperienceEventDetails>
+                    </eventDetails>
+                </event>
+                
+                <event eventId="17" eventType="Damage Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <damageEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>Ouch!!! That hurts</text>
+                            <damage numberOfAttacks="1" damageExpression="5d6+4" save="No Saving Throw" attackIsOn="Chance on Each" percentChanceOnEach="45" />
+                        </damageEventDetails>
+                    </eventDetails>
+                </event>        
+                        
+								
+
+                <event eventId="18" eventType="Attack Event" backupWhenDone="false" maxFireCount="Unlimited">
+                    <eventDetails>
+                        <damageEventDetails clearTextBeforeEvent="true" clearTextOnEnter="true" clearImageOnEnter="true" mustPressReturn="true">
+                            <text>Ouch!!! That hurts</text>
+                            <attack numberOfAttacks="1" damageExpression="5d6+4" attackThac0="20" attackIsOn="Entire Party" />
+							<!--
+								<attack numberOfAttacks="1" damageExpression="5d6+4" attackThac0="20" attackIsOn="Chance On Each" percentChanceOnEach="45" />
+							-->
+                        </damageEventDetails>
+                    </eventDetails>
+                </event>
+                
+            </events>        
+        </level>
+    
+    </levels>
+    
+</jua-adventure>

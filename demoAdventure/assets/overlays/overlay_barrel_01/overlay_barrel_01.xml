@@ -1,0 +1,14 @@
+<jua_overlay name="overlay_barrel_01" id="26f0a164-7d9d-4c75-a698-b987e0ae12e1">
+  <overlayset>
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="overlay_barrel_01_close_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="overlay_barrel_01_near_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="overlay_barrel_01_far_front.png" />
+    <overlay xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="overlay_barrel_01_far_front_secondary.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="overlay_barrel_01_close_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="overlay_barrel_01_close_left.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="overlay_barrel_01_near_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="overlay_barrel_01_near_left.png" />
+    <overlay xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="overlay_barrel_01_far_right.png" />
+    <overlay xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="overlay_barrel_01_far_left.png" />
+  </overlayset>
+</jua_overlay>

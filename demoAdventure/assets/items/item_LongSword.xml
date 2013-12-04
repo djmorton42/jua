@@ -1,0 +1,162 @@
+<items>
+<item id="Long Sword" baseName="Long Sword" identifiedName="Long Sword" isMagical="false" isUsable="false" baseValue="15" weight="4" experienceValue="0">
+    <classesAllowed>
+        <class name="Fighter" />
+        <class name="Paladin" />
+        <class name="Ranger" />
+        <class name="Cleric" />
+        <class name="Thief" />
+    </classesAllowed>
+    <weapon type="Melee" rateOfFire="1/1">
+        <damageTypes>
+            <damageType type="Slashing" />
+        </damageTypes>
+        <damage small="1d8" medium="1d8" large="1d12" />
+    </weapon>
+</item>
+
+<item id="Long Sword + 1" inherits="Long Sword" identifiedName="Long Sword + 1" isMagical="true" baseValue="200" weight="2" experienceValue="200">
+    <weapon smallDamageModifier="1" mediumDamageModifier="1" largeDamageModifier="1" thac0Modifier="-1" />
+</item>
+
+<item id="Quarter Staff" baseName="Quarter Staff" identifiedName="Quarter Staff" isMagical="false" isUsable="false" baseValue="1" weight="4">
+    <classesAllowed>
+        <class name="Fighter" />
+        <class name="Paladin" />
+        <class name="Ranger" />
+        <class name="Cleric" />
+        <class name="Mage" />
+        <class name="Thief" />
+    </classesAllowed>
+    <weapon type="Melee" rateOfFire="1/1">
+        <damageTypes>
+            <damageType type="Bludgeoning" />
+        </damageTypes>
+        <damage small="1d6" medium="1d6" large="1d6" />
+    </weapon>
+</item>
+
+<item id="Leather Armor" baseName="Leather Armor" identifiedName="Leather Armor" isMagical="false" isUsable="false" baseValue="5" weight="15" experienceValue="0">
+    <armor meleeACModifier="-2" missleACModifier="-2" exclusive="true" />
+    <placement requiresHands="0" bodyLocation="Torso" /> 
+</item>
+
+<item id="Small Shield" baseName="Small Shield" identifiedName="Small Shield" isMagical="false" isUsable="false" baseValue="3" weight="5" experienceValue="0">
+    <classesAllowed>
+        <class name="Fighter" />
+        <class name="Paladin" />
+        <class name="Ranger" />
+        <class name="Cleric" />
+    </classesAllowed>
+    <placement requiresHands="1" bodyLocation="Arm" />
+    <armor meleeACModifier="-1" missleACModifier="-1" />        
+</item>
+
+<item id="Light Crossbow" baseName="Light Crossbow" identifiedName="Light Crossbow" isMagical="false" isUsable="false" baseValue="35" weight="7" experienceValue="0">
+    <classesAllowed>
+        <class name="Fighter" />
+        <class name="Paladin" />
+        <class name="Ranger" />
+    </classesAllowed>
+    <placement requiresHands="2" />
+    <weapon type="ProjectileLauncher" smallDamageModifier="0" mediumDamageModifier="0" largeDamageModifier="0" thac0Modifier="0" rateOfFire="1/1" />
+</item>
+
+<item id="Light Quarrel" baseName="Light Quarrel" identifiedName="Light Quarrel" isMagical="false" isUsable="false" baseValue="1" weight="0.1" experienceValue="0" canBundle="true">
+    <classesAllowed>
+        <class name="Fighter" />
+        <class name="Paladin" />
+        <class name="Ranger" />
+    </classesAllowed>
+    <placement requiresHands="0" />
+    <weapon type="Projectile">
+        <damageTypes>
+            <damageType type="Piercing" />
+        </damageTypes>
+        <damage small="1d4" medium="1d4" large="1d4" />
+        <projectedBy>
+            <item id="Light Crossbow" />
+        </projectedBy>
+    </weapon>
+</item>
+
+<item id="Cloak of Displacement" baseName="Cloak" identifiedName="Cloak of Displacement" isMagical="true" isUsable="false" baseValue="500" weight="0" experienceValue="1000" >
+    <armor acModifier="-2" exclusive="false" />
+    <placement requiresHands="0" bodyLocation="Back" />
+    <effects>
+        <effect trigger="Ready" action="activateEffect" parameters="Protected from First Missle Attack per Attacker" />
+        <effect trigger="Unready" action="deactivateEffect" parameters="Protected from First Missle Attack per Attacker" />
+    </effects>
+</item>
+
+<item id="Wand of Fire" baseName="Wand" identifiedName="Wand of Fire" isMagical="true" baseValue="500" weight="0" experienceValue="1000">
+    <classesAllowed>
+        <class name="Mage" />
+    </classesAllowed>
+    <placement requiresHands="1" />
+    <usable charges="1D10+5" />
+    <effects>
+        <effect trigger="Use" action="cast" parameters="Fireball" />
+    </effects>
+</item>
+</items>
+<!--
+
+Armor
+    -> Armor Class Modifier
+
+Clothing (Helms, Hats, Belts, Boots, Greaves, Rings, Bracers, Gloves, Gauntlets, Girdles)
+    -> BodyLocation
+
+Weapons
+    -> Number of Hands
+    -> Meele, Ranged, Hybrid
+    -> Damage Type (Slashing, Piercing, Bludgeoning)
+
+Projectiles    
+    -> Damage Type
+    
+Scrolls
+
+Wands/Rods/Potions/Books/Rings
+
+
+
+
+
+
+Items:
+    Can be bundled
+    Weight
+    Value
+    isMagical
+    Name
+    Identified Name
+    Classes that can use it
+    
+
+Clothing:
+    Location - Hands, Arms, Torso, Head, Legs, Feet, Back 
+    
+
+Weapons:
+    - Damage Type (Slashing, Piercing, Bludgeoning)
+    - Number of Hands used
+    
+
+
+
+WeaponTypes:
+
+ProjectileLauncher
+Projectile
+Melee
+ProjectileLauncherAndMelee
+Thrown
+
+
+
+Piercing
+Slashing
+Bludgeoning
+-->

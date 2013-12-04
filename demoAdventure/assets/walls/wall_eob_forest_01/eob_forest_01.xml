@@ -1,0 +1,27 @@
+<jua_wall name="eob_forest_01" id="3061271f-e021-4782-b51a-c4d2c16f504b">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="eob_forest_01_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="eob_forest_01_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="eob_forest_01_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="eob_forest_01_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="eob_forest_01_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="eob_forest_01_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="eob_forest_01_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="eob_forest_01_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="eob_forest_01_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="eob_forest_01_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_eob_forest_01\eob_forest_01_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>

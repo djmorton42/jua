@@ -1,0 +1,27 @@
+<jua_wall name="stonewall1" id="18aad729-0a26-45e4-926a-297036a99cc5">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="stonewall1_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="stonewall1_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="stonewall1_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="stonewall1_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="stonewall1_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="stonewall1_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="stonewall1_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="stonewall1_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="stonewall1_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="stonewall1_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_stonewall1\stonewall1_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>

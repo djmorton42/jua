@@ -1,0 +1,11 @@
+<jua_background name="background_wood_floor_blue_sky" id="0c1c5dac-5eef-4c17-a64a-ee41cefcb5bf">    
+    <backgroundset>
+        <background xOffset="0" yOffset="0" timeOfDay="Afternoon" filename="background_wood_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dawn" filename="background_wood_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dusk" filename="background_wood_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Evening" filename="background_wood_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="MidDay" filename="background_wood_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Morning" filename="background_wood_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Night" filename="background_wood_floor_blue_sky.png" />
+    </backgroundset>
+</jua_background>

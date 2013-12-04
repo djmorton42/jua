@@ -1,0 +1,65 @@
+*Done
+&Could be done easily
+
+*Damage              
+*Gain Experience
+*Question-Button
+*Question-Yes/No
+*Stairs
+*Tavern
+*Tavern Tales
+*Teleporter
+*Text Statement
+*Transfer Module
+*Who Tries
+
+Add NPC
+Camp			
+&Chain               
+Combat
+Combat Treasure
+&Encounter
+&Enter Password
+Give Treasure
+&Guided Tour
+NPC Says
+&Pass Time
+Pick One Combat     
+Quest Stage
+&Question-List
+Remove NPC
+Shop
+Small Town
+Sounds
+Special Item
+Temple
+&Training Hall
+Utilities
+Vault
+Who Pays            
+
+
+
+Effects:
+
+Effects that modify attributes permanently (race bonus, eg. Dwarf + 1 CON)
+Effects that modify attributes while an item is readied
+Effects that modify attributes while a spell is in effect
+Effects that modify skills while a spell is in effect
+Effects that modify skills while an item is readied
+
+
+
+
+    PickPockets(0x01, "Pick Pockets"),
+    OpenLocks(0x02, "Open Locks"),
+    FindRemoveTraps(0x03, "Find/Remove Traps"),
+    MoveSilently(0x04, "Move Silently"),
+    HideInShadows(0x05, "Hide in Shadows"),
+    DetectNoise(0x06, "Detect Noise"),
+    ClimbWalls(0x07, "Climb Walls"),
+    ReadLanguages(0x08, "Read Languages")
+    
+    BendBarsLiftGates(0x09, "Bend Bars/Lift Gates")
+    OpenDoors(0x0a, "Open Doors")
+    

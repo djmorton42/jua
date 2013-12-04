@@ -1,0 +1,11 @@
+<jua_background name="BrickFloorPartlyCloudy" id="bc4ad4cf-09fd-4123-bc87-f4b4feddd937">    
+    <backgroundset>
+        <background xOffset="0" yOffset="0" timeOfDay="Afternoon" filename="background_rock_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dawn" filename="background_rock_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Dusk" filename="background_rock_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Evening" filename="background_rock_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="MidDay" filename="background_rock_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Morning" filename="background_rock_floor_blue_sky.png" />
+        <background xOffset="0" yOffset="0" timeOfDay="Night" filename="background_rock_floor_blue_sky.png" />
+    </backgroundset>
+</jua_background>

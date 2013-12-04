@@ -1,0 +1,35 @@
+<jua_border name="defaultGameBorder" id="18aad729-0a26-45e4-926a-297036a99cc9">
+    <borders>
+        <borderset type="3d">
+            <borderItem zOrder="0" xOffset="0" yOffset="0" filename="border_full_horizontal.png" />
+            <borderItem zOrder="1"  xOffset="0" yOffset="728" filename="border_full_horizontal.png" />
+            <borderItem zOrder="2"  xOffset="0" yOffset="0" filename="border_full_vertical.png" />
+            <borderItem zOrder="3"  xOffset="1004" yOffset="0" filename="border_full_vertical.png" />        
+            <borderItem zOrder="4"  xOffset="0" yOffset="502" filename="border_full_horizontal.png" />
+            <borderItem zOrder="5"  xOffset="432" yOffset="0" filename="border_divider_vertical.png" />
+            <borderItem zOrder="6"  xOffset="30" yOffset="30" filename="border_viewport_horizontal.png" />
+            <borderItem zOrder="7"  xOffset="30" yOffset="472" filename="border_viewport_horizontal.png" />
+            <borderItem zOrder="8"  xOffset="30" yOffset="30" filename="border_viewport_vertical.png" />
+            <borderItem zOrder="9"  xOffset="402" yOffset="30" filename="border_viewport_vertical.png" />    
+        </borderset>
+        <borderset type="Big Picture">
+            <borderItem zOrder="0"  xOffset="0" yOffset="0" filename="border_full_horizontal.png" />
+            <borderItem zOrder="1"  xOffset="0" yOffset="748" filename="border_full_horizontal.png" />
+            <borderItem zOrder="2"  xOffset="0" yOffset="0" filename="border_full_vertical.png" />
+            <borderItem zOrder="3"  xOffset="1004" yOffset="0" filename="border_full_vertical.png" />        
+            <borderItem zOrder="4"  xOffset="0" yOffset="542" filename="border_full_horizontal.png" />
+        </borderset>        
+        <borderset type="Full Screen">
+            <borderItem zOrder="0"  xOffset="0" yOffset="0" filename="border_full_horizontal.png" />
+            <borderItem zOrder="1"  xOffset="0" yOffset="748" filename="border_full_horizontal.png" />
+            <borderItem zOrder="2"  xOffset="0" yOffset="0" filename="border_full_vertical.png" />
+            <borderItem zOrder="3"  xOffset="1004" yOffset="0" filename="border_full_vertical.png" />        
+        </borderset>        
+        <borderset type="Full Screen With Text Line">
+            <borderItem zOrder="0"  xOffset="0" yOffset="0" filename="border_full_horizontal.png" />
+            <borderItem zOrder="1"  xOffset="0" yOffset="728" filename="border_full_horizontal.png" />
+            <borderItem zOrder="2"  xOffset="0" yOffset="0" filename="border_full_vertical.png" />
+            <borderItem zOrder="3"  xOffset="1004" yOffset="0" filename="border_full_vertical.png" />        
+        </borderset>                
+    </borders>
+</jua_border>

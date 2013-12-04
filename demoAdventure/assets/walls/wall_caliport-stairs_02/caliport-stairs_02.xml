@@ -1,0 +1,27 @@
+<jua_wall name="caliport-stairs_02" id="e9470323-b192-4c26-9128-0b3a0b163789">
+  <wallset>
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Up Close" filename="caliport-stairs_02_close_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Near By" filename="caliport-stairs_02_near_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away" filename="caliport-stairs_02_far_front.png" />
+    <wall xOffset="0" yOffset="0" facing="Front" distance="Far Away Secondary" filename="caliport-stairs_02_far_front_secondary.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Up Close" filename="caliport-stairs_02_close_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Up Close" filename="caliport-stairs_02_close_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Near By" filename="caliport-stairs_02_near_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Near By" filename="caliport-stairs_02_near_left.png" />
+    <wall xOffset="0" yOffset="0" facing="Right" distance="Far Away" filename="caliport-stairs_02_far_right.png" />
+    <wall xOffset="0" yOffset="0" facing="Left" distance="Far Away" filename="caliport-stairs_02_far_left.png" />
+  </wallset>
+<testText>
+WallDefinitionItem wallDefinitionItem = null;
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_close_front.png", Direction.Front, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_near_front.png", Direction.Front, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_far_front.png", Direction.Front, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_far_front_secondary.png", Direction.Front, Distance.FarAwaySecondary);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_close_right.png", Direction.Right, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_close_left.png", Direction.Left, Distance.UpClose);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_near_right.png", Direction.Right, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_near_left.png", Direction.Left, Distance.NearBy);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_far_right.png", Direction.Right, Distance.FarAway);
+wallDefinitionItem = new WallDefinitionItem("wall_caliport-stairs_02\caliport-stairs_02_far_left.png", Direction.Left, Distance.FarAway);
+</testText>
+</jua_wall>
