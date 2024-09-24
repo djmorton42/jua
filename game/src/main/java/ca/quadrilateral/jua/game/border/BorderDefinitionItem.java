@@ -1,7 +1,7 @@
 package ca.quadrilateral.jua.game.border;
 
 import ca.quadrilateral.jua.game.enums.BorderStyle;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class BorderDefinitionItem implements IBorderDefinitionItem {
     private BorderStyle borderStyle = null;

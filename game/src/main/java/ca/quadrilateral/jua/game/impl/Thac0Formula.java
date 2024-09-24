@@ -3,7 +3,7 @@ package ca.quadrilateral.jua.game.impl;
 import ca.quadrilateral.jua.game.exception.JUARuntimeException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class Thac0Formula {
     private static final Pattern thac0FormulaPattern = Pattern.compile("([0-9])/([0-9])");

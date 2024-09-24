@@ -2,7 +2,7 @@ package ca.quadrilateral.jua.game.wall;
 
 import ca.quadrilateral.jua.game.enums.Direction;
 import ca.quadrilateral.jua.game.enums.Distance;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class WallDefinitionItem implements IWallDefinitionItem {
 	private String filePath = null;

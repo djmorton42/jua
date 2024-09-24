@@ -8,14 +8,28 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>ca.quadrilateral.jua</groupId>
-    <artifactId>jua-runner</artifactId>
-    <name>JUA Game Runner</name>
-    <packaging>jar</packaging>
+    <artifactId>util</artifactId>
+    <name>Utils</name>
     <version>0.0.1</version>
     <dependencies>
         <dependency>
-            <groupId>ca.quadrilateral.jua</groupId>
-            <artifactId>default-first-person-display-engine</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+    <!--
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>ca.switchcase</groupId>
+            <artifactId>sct-commons</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -30,14 +44,8 @@
             <artifactId>spring-context</artifactId>
         </dependency>
         <dependency>
-            <groupId>ca.quadrilateral.jua</groupId>
-            <artifactId>util</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>ca.quadrilateral.jua</groupId>
-            <artifactId>game</artifactId>
-            <version>0.0.1</version>
-            <type>jar</type>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>
@@ -51,26 +59,6 @@
             <groupId>org.slf4j</groupId>
             <artifactId>jcl-over-slf4j</artifactId>
         </dependency>
+        -->
     </dependencies>
-    <build>
-        <plugins>
-
-
-            <plugin>
-                <groupId>com.jolira</groupId>
-                <artifactId>onejar-maven-plugin</artifactId>
-                <version>1.4.4</version>
-                <executions>
-                    <execution>
-                        <configuration>
-                            <mainClass>ca.quadrilateral.jua.runner.GameLauncher</mainClass>
-                        </configuration>
-                        <goals>
-                            <goal>one-jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>

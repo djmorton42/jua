@@ -2,7 +2,7 @@ package ca.quadrilateral.jua.game.impl.event;
 
 import ca.quadrilateral.jua.game.enums.EventType;
 import ca.quadrilateral.jua.game.image.IGameImage;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class PictureEvent extends AbstractEvent {
 	private IGameImage initialImage = null;

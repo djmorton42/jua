@@ -4,7 +4,7 @@ import ca.quadrilateral.jua.game.IChainable;
 import ca.quadrilateral.jua.game.IChainedEventContainer;
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.enums.ChainCondition;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public abstract class AbstractEvent implements IEvent, IChainedEventContainer {
 	public static final int UNLIMITED_EVENT_FIRE_COUNT = -1;

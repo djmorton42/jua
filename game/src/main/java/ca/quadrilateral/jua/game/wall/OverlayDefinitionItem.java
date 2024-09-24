@@ -1,6 +1,6 @@
 package ca.quadrilateral.jua.game.wall;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import ca.quadrilateral.jua.game.enums.Direction;
 import ca.quadrilateral.jua.game.enums.Distance;
 

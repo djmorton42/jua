@@ -3,7 +3,7 @@ package ca.quadrilateral.jua.game.impl.event;
 import ca.quadrilateral.jua.game.enums.EventType;
 import ca.quadrilateral.jua.game.enums.SavingEffect;
 import ca.quadrilateral.jua.game.enums.SavingType;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 
 public class DamageEvent extends BaseDamageEvent {

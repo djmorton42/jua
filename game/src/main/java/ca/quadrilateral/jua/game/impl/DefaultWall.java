@@ -3,7 +3,7 @@ package ca.quadrilateral.jua.game.impl;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import ca.quadrilateral.jua.game.IWall;
 import ca.quadrilateral.jua.game.enums.FacingEnum;
 import ca.quadrilateral.jua.game.enums.WallType;

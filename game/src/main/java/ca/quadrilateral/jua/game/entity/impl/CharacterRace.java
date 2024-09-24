@@ -1,6 +1,6 @@
 package ca.quadrilateral.jua.game.entity.impl;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import ca.quadrilateral.jua.game.impl.DiceExpression;
 import ca.quadrilateral.jua.game.impl.DiceRoller;
 

@@ -2,7 +2,7 @@ package ca.quadrilateral.jua.game.impl.event;
 
 import ca.quadrilateral.jua.game.enums.AttackIsOn;
 import ca.quadrilateral.jua.game.impl.DiceExpression;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public abstract class BaseDamageEvent extends TextEvent {
     private int numberOfAttacks = 0;

@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 import ca.quadrilateral.jua.game.enums.BorderStyle;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class BorderDefinition implements IBorderDefinition {
     private UUID borderDefinitionId = null;

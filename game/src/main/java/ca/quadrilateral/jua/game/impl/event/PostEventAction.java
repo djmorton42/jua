@@ -2,7 +2,7 @@ package ca.quadrilateral.jua.game.impl.event;
 
 import ca.quadrilateral.jua.game.IChainedEventContainer;
 import ca.quadrilateral.jua.game.IEvent;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class PostEventAction implements IChainedEventContainer {
 	private boolean backupOneStepWhenDone = false;

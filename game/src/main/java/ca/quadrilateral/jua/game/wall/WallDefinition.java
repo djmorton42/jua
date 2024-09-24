@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.UUID;
 import ca.quadrilateral.jua.game.enums.Direction;
 import ca.quadrilateral.jua.game.enums.Distance;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class WallDefinition implements IWallDefinition {
 	private UUID wallDefinitionId = null;

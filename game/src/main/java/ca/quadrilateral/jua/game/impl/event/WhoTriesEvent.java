@@ -5,7 +5,7 @@ import ca.quadrilateral.jua.game.enums.EntityAttributeType;
 import ca.quadrilateral.jua.game.enums.EventType;
 import ca.quadrilateral.jua.game.enums.WhoTriesCheckType;
 import ca.quadrilateral.jua.game.impl.DiceExpression;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class WhoTriesEvent extends SuccessFailureEvent {
     private EntityAttributeType checkAgainstAttributeType = null;

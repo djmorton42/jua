@@ -3,7 +3,7 @@ package ca.quadrilateral.jua.game.impl;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IMapCell;
 import ca.quadrilateral.jua.game.IWall;

@@ -1,7 +1,8 @@
 package ca.quadrilateral.jua.game.image;
 
 import java.util.UUID;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import ca.quadrilateral.jua.game.IGameCache;
@@ -15,7 +16,7 @@ import ca.quadrilateral.jua.game.background.IBackgroundDefinitionManager;
 import ca.quadrilateral.jua.game.enums.TimeOfDay;
 
 public class BackgroundImageLoader implements IBackgroundImageLoader {
-	private static final Logger log = Logger.getLogger(BackgroundImageLoader.class);
+	private static final Logger logger = LoggerFactory.getLogger(BackgroundImageLoader.class);
 
 	@Autowired @Qualifier("levelStructureCache")
 	private IGameCache globalCache;
@@ -48,7 +49,7 @@ public class BackgroundImageLoader implements IBackgroundImageLoader {
 			final IBackgroundDefinitionItem backgroundDefinitionItem = backgroundDefinition.getBackgroundDefinitionItem(timeOfDay);
 			final IGameImage gameImage = new ImageLoader().loadImage(gameContext.getBackgroundsPath() + backgroundDefinitionItem.getFilePath());
 			if (gameImage == null) {
-				log.error("Failed to load background image: " + gameContext.getBackgroundsPath() + backgroundDefinitionItem.getFilePath());
+				logger.error("Failed to load background image: " + gameContext.getBackgroundsPath() + backgroundDefinitionItem.getFilePath());
 				System.exit(1);
 			}
 			globalCache.put(constructBackgroundKeyString(backgroundId, timeOfDay), gameImage);

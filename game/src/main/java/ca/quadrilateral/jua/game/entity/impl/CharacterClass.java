@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import ca.quadrilateral.jua.game.entity.IEntity;
 import ca.quadrilateral.jua.game.enums.EntityAbilityType;
 import ca.quadrilateral.jua.game.enums.EntityAttributeType;

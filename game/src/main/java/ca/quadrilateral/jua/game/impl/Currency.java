@@ -1,6 +1,6 @@
 package ca.quadrilateral.jua.game.impl;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class Currency implements Comparable<Currency> {
     private String name;

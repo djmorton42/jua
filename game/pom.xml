@@ -23,8 +23,8 @@
             <type>pom</type>
         </dependency>
         <dependency>
-            <groupId>ca.switchcase</groupId>
-            <artifactId>sct-commons</artifactId>
+            <groupId>ca.quadrilateral.jua</groupId>
+            <artifactId>util</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
@@ -41,6 +41,10 @@
         <dependency>
             <groupId>commons-collections</groupId>
             <artifactId>commons-collections</artifactId>
+        </dependency>
+         <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>ch.qos.logback</groupId>

@@ -9,7 +9,7 @@ import ca.quadrilateral.jua.game.impl.event.WhoPaysEvent;
 import ca.switchcase.commons.util.XmlDomUtilities;
 
 import java.util.Map;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.w3c.dom.Node;
 

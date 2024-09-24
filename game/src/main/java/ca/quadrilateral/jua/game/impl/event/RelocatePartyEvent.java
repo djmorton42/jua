@@ -5,7 +5,7 @@ import ca.quadrilateral.jua.game.IPartyPosition;
 import ca.quadrilateral.jua.game.IVetoablePositionChangeEvent;
 import ca.quadrilateral.jua.game.enums.EventExecutionTime;
 import ca.quadrilateral.jua.game.enums.EventType;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class RelocatePartyEvent extends AbstractEvent implements IVetoablePositionChangeEvent {
 	private UUID destinationLevelId = null;

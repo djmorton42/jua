@@ -1,7 +1,7 @@
 package ca.quadrilateral.jua.game.entity.impl;
 
 import ca.quadrilateral.jua.game.impl.DiceExpression;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class LevelRank implements Comparable<LevelRank>{
     private int rank = 0;

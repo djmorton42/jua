@@ -1,6 +1,6 @@
 package ca.quadrilateral.jua.game;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class GameStats implements IGameStats {
     public static final long NANOS_PER_SECOND = 1000000000;

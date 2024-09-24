@@ -16,6 +16,7 @@
     <name>Java UA</name>
     <version>0.0.1</version>
     <modules>
+        <module>util</module>
         <module>display-engine</module>
         <module>default-first-person-display-engine</module>
         <module>game</module>
@@ -26,6 +27,11 @@
     </modules>
     <dependencyManagement>
         <dependencies>
+            <dependency>
+              <groupId>ca.quadrilateral.jua</groupId>
+              <artifactId>util</artifactId>
+              <version>0.0.1</version>
+            </dependency>
             <dependency>
                 <groupId>ca.quadrilateral.jua</groupId>
                 <artifactId>game</artifactId>
@@ -69,11 +75,6 @@
                 <version>1.6.2</version>
             </dependency>
             <dependency>
-                <groupId>ca.switchcase</groupId>
-                <artifactId>sct-commons</artifactId>
-                <version>1.0.15</version>
-            </dependency>
-            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-core</artifactId>
                 <version>${spring.version}</version>
@@ -93,22 +94,13 @@
                 <artifactId>commons-collections</artifactId>
                 <version>3.2.1</version>
             </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>3.2.1</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
-
-<!--
-    <pluginRepositories>
-        <pluginRepository>
-            <id>onejar-maven-plugin.googlecode.com</id>
-            <url>http://onejar-maven-plugin.googlecode.com/svn/mavenrepo</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>repo1org</id>
-            <name>External Plugin Repository</name>
-            <url>http://repo1.maven.org/maven2/</url>
-        </pluginRepository>
-    </pluginRepositories>
--->
 
     <build>
         <pluginManagement>

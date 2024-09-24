@@ -3,8 +3,8 @@ package ca.quadrilateral.jua.game.item.impl;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 import ca.quadrilateral.jua.game.entity.impl.CharacterClass;
 

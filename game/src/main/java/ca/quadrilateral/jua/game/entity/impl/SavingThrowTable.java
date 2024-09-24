@@ -4,7 +4,7 @@ import ca.quadrilateral.jua.game.enums.SavingType;
 import java.util.Comparator;
 import java.util.Set;
 import java.util.TreeSet;
-import org.apache.commons.lang.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 
 public class SavingThrowTable {
     private Set<SavingThrowDefinition> savingThrowDefinitions = new TreeSet<SavingThrowDefinition>(new Comparator<SavingThrowDefinition>() {
