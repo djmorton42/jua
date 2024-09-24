@@ -12,6 +12,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ca.quadrilateral.jua.game.IGameConfiguration;
 import ca.quadrilateral.jua.game.IGameContext;
 import ca.quadrilateral.jua.game.entity.impl.Alignment;
@@ -24,6 +27,8 @@ import ca.quadrilateral.jua.game.impl.TimeDefinition;
 import ca.quadrilateral.jua.game.item.impl.ItemDefinition;
 
 public class GameContext implements IGameContext {
+    private static final Logger logger = LoggerFactory.getLogger(GameContext.class);
+    
     private Window gameWindow = null;
     private IGameConfiguration gameConfiguration;
     private String adventureHome;
@@ -247,7 +252,7 @@ public class GameContext implements IGameContext {
     @Override
     public void setSavingThrowTables(Map<Integer, SavingThrowTable> savingThrowTables) {
         for(Integer x : savingThrowTables.keySet()) {
-            System.out.println("Save Table: " + savingThrowTables.get(x));
+            logger.debug("Save Table: {}", savingThrowTables.get(x));
         }
 
         this.savingThrowTables = savingThrowTables;

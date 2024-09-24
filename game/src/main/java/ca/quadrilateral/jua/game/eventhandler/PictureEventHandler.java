@@ -1,7 +1,9 @@
 package ca.quadrilateral.jua.game.eventhandler;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IGameStateMachine;
 import ca.quadrilateral.jua.game.enums.ChainCondition;
@@ -9,7 +11,7 @@ import ca.quadrilateral.jua.game.enums.EventType;
 import ca.quadrilateral.jua.game.impl.event.PictureEvent;
 
 public class PictureEventHandler extends AbstractEventHandler {
-    private static final Logger log = Logger.getLogger(PictureEventHandler.class);
+    private static final Logger logger = LoggerFactory.getLogger(PictureEventHandler.class);
 
     @Autowired
     private IGameStateMachine gameStateMachine;
@@ -29,7 +31,7 @@ public class PictureEventHandler extends AbstractEventHandler {
         final PictureEvent pictureEvent = (PictureEvent) super.event;
 
         if (pictureEvent.shouldFire()) {
-            System.out.println("Firing Picture Event");
+            logger.debug("Firing Picture Event");
             pictureEvent.incrementFireCount();
             imageRenderer.init(pictureEvent.getInitialImage(),
                                pictureEvent.getFinalImage(),
@@ -42,7 +44,7 @@ public class PictureEventHandler extends AbstractEventHandler {
             }
             return null;
         } else {
-            System.out.println("Not Firing Picture Event");
+            logger.debug("Not Firing Picture Event");
             super.isDone = true;
             super.isInitialized = false;
             if (pictureEvent.getChainCondition().equals(ChainCondition.Always) || pictureEvent.getChainCondition().equals(ChainCondition.EventDoesNotHappen)) {

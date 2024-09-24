@@ -8,14 +8,17 @@ import java.awt.image.BufferStrategy;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
-import java.text.MessageFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Random;
 import java.util.WeakHashMap;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IEventHandler;
 import ca.quadrilateral.jua.game.IGameClock;
@@ -45,6 +48,8 @@ import ca.quadrilateral.jua.game.item.impl.ItemDefinition;
 import ca.quadrilateral.jua.runner.parser.IAdventureParser;
 
 public class GameRunner implements IGameRunner {
+    private static final Logger logger = LoggerFactory.getLogger(GameRunner.class);
+    
     public static final long NANOS_PER_SECOND = 1000000000;
 
     @Autowired
@@ -95,7 +100,7 @@ public class GameRunner implements IGameRunner {
 
     @Override
     public void initialize() {
-        System.out.println("Game Initialized");
+        logger.info("Game Initialized");
 
         menuOptions.add("Move");
         menuOptions.add("Area");
@@ -119,8 +124,7 @@ public class GameRunner implements IGameRunner {
         try {
             this.loadGame(commandLineArgs);
         } catch (IOException ioe) {
-            System.out.println("An exception occurred loading the adventure...");
-            ioe.printStackTrace();
+            logger.error("An exception occurred loading the adventure...", ioe);
             System.exit(1);
         }
 
@@ -132,7 +136,7 @@ public class GameRunner implements IGameRunner {
 
         final File adventureHomeFile = new File(adventureHome);
         if (!adventureHomeFile.exists() || !adventureHomeFile.isDirectory()) {
-            System.out.println(MessageFormat.format("The adventure path specified is invalid ({0})", adventureHome));
+            logger.error("The adventure path specified is invalid ({})", adventureHome);
         }
 
         final File[] adventureFiles =
@@ -144,14 +148,14 @@ public class GameRunner implements IGameRunner {
             });
 
         if (adventureFiles.length == 0) {
-            System.out.println("No adventure file could be found.  Please specify a path containing a file that ends with adventure.xml");
+            logger.error("No adventure file could be found.  Please specify a path containing a file that ends with adventure.xml");
             System.exit(1);
         } else if (adventureFiles.length > 1) {
-            System.out.println("Multiple adventure files found at the specified path.  Only one adventure file may be present.");
+            logger.error("Multiple adventure files found at the specified path.  Only one adventure file may be present.");
             System.exit(1);
         }
         final File adventureFile = adventureFiles[0];
-        System.out.println(MessageFormat.format("Loading Adventure from {0}", adventureFile.getCanonicalPath()));
+        logger.info("Loading Adventure from {}", adventureFile.getCanonicalPath());
 
         gameContext.setAdventureHome(adventureHome);
         adventureParser.parse(adventureFile);
@@ -299,7 +303,7 @@ public class GameRunner implements IGameRunner {
             displayManager.setDisplayMode(gameWindow);
             this.gameLoop(displayManager.getBufferStrategy());
         } finally {
-            System.out.println("Shutting Down");
+            logger.info("Shutting Down");
             displayManager.restoreOriginalDisplayMode();
         }
     }
@@ -465,11 +469,11 @@ public class GameRunner implements IGameRunner {
                 if (!currentEventHandler.isDone()) {
                     currentEventHandler.runEvent();
                 } else {
-                    System.out.println("Event is done... Clearing variables");
+                    logger.debug("Event is done... Clearing variables");
                     currentEvent = null;
                     currentEventHandler = null;
 
-                    System.out.println("Updating Can Advance Level Flag for party members");
+                    logger.debug("Updating Can Advance Level Flag for party members");
                     final List<PartyMember> partyMembers = this.levelContext.getParty().getPartyMembers();
                     for(PartyMember partyMember : partyMembers) {
                         partyMember.canAdvanceLevel();
@@ -485,7 +489,7 @@ public class GameRunner implements IGameRunner {
                 }
             } else {
                 this.gameStateMachine.setMovementEnabled(false);
-                System.out.println("Getting Event Handler");
+                logger.debug("Getting Event Handler");
                 currentEventHandler = getEventHandler(currentEvent);
                 currentEventHandler.initializeEvent(currentEvent);
             }
@@ -495,7 +499,7 @@ public class GameRunner implements IGameRunner {
     }
 
     private IEventHandler getEventHandler(IEvent currentEvent) {
-        System.out.println("Event Type: " + currentEvent.toString());
+        logger.debug("Event Type: {}", currentEvent.toString());
 
         for(IEventHandler eventHandler : eventHandlers) {
             if (eventHandler.canHandle(currentEvent)) {

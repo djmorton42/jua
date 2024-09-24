@@ -4,6 +4,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import ca.quadrilateral.jua.game.IGameStateMachine;
@@ -19,6 +21,8 @@ import ca.quadrilateral.jua.game.enums.GameMode;
 import ca.quadrilateral.jua.game.enums.WallType;
 
 public class KeyboardHandler extends KeyAdapter implements KeyListener {
+    private static final Logger logger = LoggerFactory.getLogger(KeyboardHandler.class);
+    
     @Autowired
     private ILevelContext levelContext;
 
@@ -60,7 +64,7 @@ public class KeyboardHandler extends KeyAdapter implements KeyListener {
 
     @Override
     public void keyReleased(KeyEvent e) {
-        System.out.println("Registered Key Press");
+        logger.debug("Registered Key Press");
 
         if (gameStateMachine.getCurrentGameMode().equals(GameMode.ThreeDMenu)) {
             handleButtonInput(e.getKeyCode());
@@ -169,7 +173,7 @@ public class KeyboardHandler extends KeyAdapter implements KeyListener {
                         break;
 
                     case KeyEvent.VK_ESCAPE:
-                        System.out.println(gameStats.toString());
+                        logger.debug(gameStats.toString());
                         System.exit(0);
                         break;
                     case KeyEvent.VK_PAGE_DOWN:

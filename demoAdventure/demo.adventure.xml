@@ -1425,8 +1425,10 @@
 
 
             <eventTriggers>
-                <mapTrigger eventId="101" x="16" y="1" />
+                <mapTrigger eventId="101" x="14" y="1" />
+                <!--
                 <mapTrigger eventId="109" x="14" y="1" />
+                -->
             </eventTriggers>
             <events>
                 <event eventId="101" eventType="Text Event" backupWhenDone="false" maxFireCount="1">
@@ -1449,8 +1451,10 @@
                             <steps>
                                 <step direction="Front" />
                                 <step direction="Front" />
+                                <!--
                                 <step direction="Front" />
                                 <step direction="Front" />
+                                -->
                                 <step direction="Left" />
                                 <step direction="Front" />
                             </steps>

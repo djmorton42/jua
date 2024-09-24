@@ -1,5 +1,7 @@
 package ca.quadrilateral.jua.game.eventhandler;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IEventHandler;
@@ -10,6 +12,8 @@ import ca.quadrilateral.jua.game.enums.EventType;
 import ca.quadrilateral.jua.game.impl.event.QuestionYesNoEvent;
 
 public class QuestionYesNoEventHandler extends AbstractEventHandler {
+    private static final Logger logger = LoggerFactory.getLogger(QuestionYesNoEventHandler.class);
+    
 	@Autowired
 	private IGameStateMachine gameStateMachine;
 
@@ -22,7 +26,7 @@ public class QuestionYesNoEventHandler extends AbstractEventHandler {
 	}
 
 	private void initialize() {
-		System.out.println("Initializing QuestionYesNoEvent Handler");
+		logger.debug("Initializing QuestionYesNoEvent Handler");
 		this.eventStage = 0;
 		this.questionPath = 0;
 	}

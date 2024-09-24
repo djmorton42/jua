@@ -1,19 +1,23 @@
 package ca.quadrilateral.jua.game.impl;
 
+import groovy.lang.Binding;
+import groovy.util.GroovyScriptEngine;
+
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import ca.quadrilateral.jua.game.IGameContext;
 import ca.quadrilateral.jua.game.IGameStateMachine;
 import ca.quadrilateral.jua.game.ILevelContext;
 import ca.quadrilateral.jua.game.IScriptManager;
 import ca.quadrilateral.jua.game.exception.JUARuntimeException;
-import groovy.lang.Binding;
-import groovy.util.GroovyScriptEngine;
-import java.util.Map;
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class ScriptManager implements IScriptManager {
+    private static final Logger logger = LoggerFactory.getLogger(ScriptManager.class);
 
-    private static final Logger log = Logger.getLogger(ScriptManager.class);
     @Autowired
     private IGameContext gameContext;
     @Autowired
@@ -55,16 +59,16 @@ public class ScriptManager implements IScriptManager {
     }
 
     private String processOutputText(String outputText) {
-        System.out.println("Original Output Text: " + outputText);
+        logger.debug("Original Output Text: {}", outputText);
         String modifiedOutputText = outputText.replace("<br/>", "\n").replace("<br />", "\n").replace("&#160;", " ");
-        System.out.println("Processed Output Text: " + modifiedOutputText);
+        logger.debug("Processed Output Text: {}", modifiedOutputText);
         return modifiedOutputText;
     }
 
     private String cleanInputText(String inputText) {
-        System.out.println("Original Input Text: " + inputText);
+        logger.debug("Original Input Text: ", inputText);
         String modifiedInputText = inputText.trim().replace("\n", " ").replaceAll("[\\s]{2,}", " ");
-        System.out.println("Modified Input Text: " + modifiedInputText);
+        logger.debug("Modified Input Text: ", modifiedInputText);
         return modifiedInputText;
     }
 }

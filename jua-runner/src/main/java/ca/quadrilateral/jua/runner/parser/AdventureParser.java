@@ -19,6 +19,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.w3c.dom.Document;
 import org.w3c.dom.NamedNodeMap;
@@ -68,6 +70,8 @@ import ca.quadrilateral.jua.runner.parser.event.IEventParser;
 import ca.switchcase.commons.util.XmlDomUtilities;
 
 public class AdventureParser implements IAdventureParser {
+    private static final Logger logger = LoggerFactory.getLogger(AdventureParser.class);
+    
     @Autowired
     private ILevelContext levelContext;
 
@@ -123,7 +127,7 @@ public class AdventureParser implements IAdventureParser {
             loadItemDefinitions();
 
             for(ItemDefinition itemDefinition : gameContext.getItemDefinitions()) {
-                System.out.println(itemDefinition.toString());
+                logger.debug("Game Item Definition {}", itemDefinition.toString());
             }
 
 
@@ -173,7 +177,7 @@ public class AdventureParser implements IAdventureParser {
                                 }
                             }
                         } else if (levelChildNode.getNodeName().equals("eventTriggers")) {
-                            System.out.println("Event Trigger Child Node Count: " + levelChildNode.getChildNodes().getLength());
+                            logger.debug("Event Trigger Child Node Count: {}", levelChildNode.getChildNodes().getLength());
                             for(int n = 0; n < levelChildNode.getChildNodes().getLength(); n++) {
                                 final Node possibleEventTriggerNode = levelChildNode.getChildNodes().item(n);
                                 if (possibleEventTriggerNode != null && possibleEventTriggerNode.getNodeName() != null && possibleEventTriggerNode.getNodeName().contains("Trigger")) {
@@ -195,13 +199,13 @@ public class AdventureParser implements IAdventureParser {
                         cell.setBackgroundDefinitionId(background.getBackgroundId());
                     }
 
-                    System.out.println("\n****** Overlay Count: " + overlays.size() + " ******\n");
+                    logger.debug("\n****** Overlay Count: {} ******\n", overlays.size());
 
                     for(OverlayParseHolder overlay : overlays) {
                         final IMapCell cell = map.getMapCellAt(overlay.getX(), overlay.getY());
                         final IWall cellWall = cell.getWall(overlay.getFacing());
                         cellWall.addOverlayDefinition(overlay.getOverlayDefinitionId());
-                        System.out.println("Adding overlay definition " + overlay.getOverlayDefinitionId() + " to map cell " + cell.getCellX() + ", " + cell.getCellY() + " - " + cellWall.getWallFacing());
+                        logger.debug("Adding overlay definition {} to map cell {}, {} - {}", new Object[] {overlay.getOverlayDefinitionId(), cell.getCellX(), cell.getCellY(), cellWall.getWallFacing()});
                     }
 
                     for(Node eventNode : eventNodes) {
@@ -220,7 +224,7 @@ public class AdventureParser implements IAdventureParser {
                     deferredChainParseTracker.processDeferredChains();
 
                     for(IEvent event : eventIdMap.values()) {
-                        System.out.println(event.toString());
+                        logger.debug("Event: {}", event.toString());
                     }
 
                     levelDefinitionManager.addLevel(level);
@@ -231,16 +235,16 @@ public class AdventureParser implements IAdventureParser {
             levelContext.setPartyPosition(gameConfigurationManager.getStartingPartyPosition());
 
             for(Currency currency : this.gameContext.getCurrenyList()) {
-                System.out.println(currency.toString());
+                logger.debug("Currency: {}", currency.toString());
             }
 
             for(TimeDefinition timeDefinition : this.gameContext.getTimeDefinitions()) {
-                System.out.println(timeDefinition.toString());
+                logger.debug("Time: {}", timeDefinition.toString());
             }
 
             gameContext.initializeGroovy();
 
-            System.out.print("Game Loaded: " + gameConfigurationManager.toString());
+            logger.debug("Game Loaded: {}", gameConfigurationManager.toString());
 
         } catch (Exception e) {
             throw new JUARuntimeException(e);
@@ -257,7 +261,7 @@ public class AdventureParser implements IAdventureParser {
                 final IMapCell cell = levelMap.getMapCellAt(xPos, yPos);
                 cell.setEventChain(eventIdMap.get(eventId));
             } else {
-                System.out.println("Unhandled event trigger node: " + eventTriggerNode.getNodeName());
+                logger.warn("Unhandled event trigger node: {}", eventTriggerNode.getNodeName());
             }
         }
     }
@@ -344,7 +348,7 @@ public class AdventureParser implements IAdventureParser {
         final Set<CharacterRace> characterRaces = parser.parseRacesNode(racesNode);
 
         for(CharacterRace characterRace : characterRaces) {
-            System.out.println(characterRace.toString());
+            logger.debug("Character Race: {}", characterRace.toString());
         }
 
         this.gameContext.setCharacterRaces(characterRaces);
@@ -358,7 +362,7 @@ public class AdventureParser implements IAdventureParser {
         final Set<CharacterClass> characterClasses = parser.parseClassesNode(classesNode, this.gameContext.getCharacterRaces());
 
         for(CharacterClass characterClass : characterClasses) {
-            System.out.println(characterClass.toString());
+            logger.debug("Character class: {}", characterClass.toString());
         }
 
         this.gameContext.setCharacterClasses(characterClasses);
@@ -449,7 +453,7 @@ public class AdventureParser implements IAdventureParser {
     }
 
     private void loadAssetDefinitions() throws Exception {
-        System.out.println("Loading Asset Definitions");
+        logger.info("Loading Asset Definitions");
         loadWallDefinitions();
         loadBackgroundDefinitions();
         loadOverlayDefinitions();
@@ -536,7 +540,7 @@ public class AdventureParser implements IAdventureParser {
                         }
                     });
                 if(xmlFiles.length == 0) {
-                    System.out.println(MessageFormat.format("No overlay definition xml file found in {0}", file.getCanonicalFile()));
+                    logger.warn("No overlay definition xml file found in {}", file.getCanonicalFile());
                 } else {
                     for(File xmlFile : xmlFiles) {
                         loadOverlayDefinition(xmlFile);
@@ -556,11 +560,11 @@ public class AdventureParser implements IAdventureParser {
 
         final NodeList juaOverlayList = doc.getElementsByTagName("jua_overlay");
         if (juaOverlayList.getLength() == 0) {
-            System.out.println(MessageFormat.format("File {0} is not a valid overlay definition file", file.getCanonicalFile()));
+            logger.warn("File {} is not a valid overlay definition file", file.getCanonicalFile());
         } else if (juaOverlayList.getLength() > 1) {
-            System.out.println(MessageFormat.format("File {0} contains multiple jua_overlay tags.  An overlay definition file can only contain one jua_overlay element", file.getCanonicalFile()));
+            logger.warn("File {} contains multiple jua_overlay tags.  An overlay definition file can only contain one jua_overlay element", file.getCanonicalFile());
         } else {
-            System.out.println(MessageFormat.format("Loading Overlay Definition File {0}", file.getCanonicalFile()));
+            logger.info("Loading Overlay Definition File {0}", file.getCanonicalFile());
             final Node rootNode = juaOverlayList.item(0);
             final String overlayName = XmlDomUtilities.getAttributeValue(rootNode, "name");
             final UUID overlayUUID = XmlDomUtilities.getAttributeValueAsUUID(rootNode, "id");
@@ -588,7 +592,7 @@ public class AdventureParser implements IAdventureParser {
 
             overlayDefinitionManager.addOverlayDefinition(overlayDefinition);
 
-            System.out.println("Parsed Overlay Definition: " + overlayDefinition.toString());
+            logger.info("Parsed Overlay Definition: {}", overlayDefinition.toString());
         }
 
     }
@@ -606,7 +610,7 @@ public class AdventureParser implements IAdventureParser {
                         }
                     });
                 if(xmlFiles.length == 0) {
-                    System.out.println(MessageFormat.format("No wall definition xml file found in {0}", file.getCanonicalFile()));
+                    logger.warn("No wall definition xml file found in {}", file.getCanonicalFile());
                 } else {
                     for(File xmlFile : xmlFiles) {
                         loadWallDefinition(xmlFile);
@@ -626,11 +630,11 @@ public class AdventureParser implements IAdventureParser {
 
         final NodeList juaWallList = doc.getElementsByTagName("jua_wall");
         if (juaWallList.getLength() == 0) {
-            System.out.println(MessageFormat.format("File {0} is not a valid wall definition file", file.getCanonicalFile()));
+            logger.warn("File {} is not a valid wall definition file", file.getCanonicalFile());
         } else if (juaWallList.getLength() > 1) {
-            System.out.println(MessageFormat.format("File {0} contains multiple jua_wall tags.  An wall definition file can only contain one jua_wall element", file.getCanonicalFile()));
+            logger.warn("File {} contains multiple jua_wall tags.  An wall definition file can only contain one jua_wall element", file.getCanonicalFile());
         } else {
-            System.out.println(MessageFormat.format("Loading Wall Definition File {0}", file.getCanonicalFile()));
+            logger.warn("Loading Wall Definition File {}", file.getCanonicalFile());
             final Node rootNode = juaWallList.item(0);
             final String wallsetName = XmlDomUtilities.getAttributeValue(rootNode, "name");
             final UUID wallsetUUID = XmlDomUtilities.getAttributeValueAsUUID(rootNode, "id");
@@ -658,7 +662,7 @@ public class AdventureParser implements IAdventureParser {
 
             wallDefinitionManager.addWallDefinition(wallDefinition);
 
-            System.out.println("Parsed Wall Definition: " + wallDefinition.toString());
+            logger.info("Parsed Wall Definition: {}", wallDefinition.toString());
         }
 
     }
@@ -676,7 +680,7 @@ public class AdventureParser implements IAdventureParser {
                         }
                     });
                 if(xmlFiles.length == 0) {
-                    System.out.println(MessageFormat.format("No background definition xml file found in {0}", file.getCanonicalFile()));
+                    logger.warn("No background definition xml file found in {}", file.getCanonicalFile());
                 } else {
                     for(File xmlFile : xmlFiles) {
                         loadBackgroundDefinition(xmlFile);
@@ -695,11 +699,11 @@ public class AdventureParser implements IAdventureParser {
 
         final NodeList juaWallList = doc.getElementsByTagName("jua_background");
         if (juaWallList.getLength() == 0) {
-            System.out.println(MessageFormat.format("File {0} is not a valid background definition file", file.getCanonicalFile()));
+            logger.warn("File {} is not a valid background definition file", file.getCanonicalFile());
         } else if (juaWallList.getLength() > 1) {
-            System.out.println(MessageFormat.format("File {0} contains multiple jua_background tags.  A background definition file can only contain one jua_background element", file.getCanonicalFile()));
+            logger.warn("File {} contains multiple jua_background tags.  A background definition file can only contain one jua_background element", file.getCanonicalFile());
         } else {
-            System.out.println(MessageFormat.format("Loading Background Definition File {0}", file.getCanonicalFile()));
+            logger.warn("Loading Background Definition File {}", file.getCanonicalFile());
             final Node rootNode = juaWallList.item(0);
             final String backgroundName = XmlDomUtilities.getAttributeValue(rootNode, "name");
             final UUID backgroundUUID = XmlDomUtilities.getAttributeValueAsUUID(rootNode, "id");
@@ -726,7 +730,7 @@ public class AdventureParser implements IAdventureParser {
 
             backgroundDefinitionManager.addBackgroundDefinition(backgroundDefinition);
 
-            System.out.println("Parsed Background Definition: " + backgroundDefinition.toString());
+            logger.info("Parsed Background Definition: {}", backgroundDefinition.toString());
         }
 
     }
@@ -745,7 +749,7 @@ public class AdventureParser implements IAdventureParser {
                         }
                     });
                 if(xmlFiles.length == 0) {
-                    System.out.println(MessageFormat.format("No border definition xml file found in {0}", file.getCanonicalFile()));
+                    logger.warn("No border definition xml file found in {}", file.getCanonicalFile());
                 } else {
                     for(File xmlFile : xmlFiles) {
                         loadBorderDefinition(xmlFile);
@@ -764,11 +768,11 @@ public class AdventureParser implements IAdventureParser {
 
         final NodeList juaWallList = doc.getElementsByTagName("jua_border");
         if (juaWallList.getLength() == 0) {
-            System.out.println(MessageFormat.format("File {0} is not a valid border definition file", file.getCanonicalFile()));
+            logger.warn("File {} is not a valid border definition file", file.getCanonicalFile());
         } else if (juaWallList.getLength() > 1) {
-            System.out.println(MessageFormat.format("File {0} contains multiple jua_border tags.  A border definition file can only contain one jua_border element", file.getCanonicalFile()));
+            logger.warn("File {} contains multiple jua_border tags.  A border definition file can only contain one jua_border element", file.getCanonicalFile());
         } else {
-            System.out.println(MessageFormat.format("Loading Border Definition File {0}", file.getCanonicalFile()));
+            logger.warn("Loading Border Definition File {}", file.getCanonicalFile());
             final Node rootNode = juaWallList.item(0);
             final String borderName = XmlDomUtilities.getAttributeValue(rootNode, "name");
             final UUID borderUUID = XmlDomUtilities.getAttributeValueAsUUID(rootNode, "id");
@@ -798,7 +802,7 @@ public class AdventureParser implements IAdventureParser {
             }
             borderDefinitionManager.addBorderDefinition(borderDefinition);
 
-            System.out.println("Parsed Border Definition: " + borderDefinition.toString());
+            logger.info("Parsed Border Definition: {}", borderDefinition.toString());
         }
 
     }

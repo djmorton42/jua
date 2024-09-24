@@ -7,13 +7,19 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import ca.quadrilateral.jua.game.GameConstants;
 import ca.quadrilateral.jua.game.IGameConfiguration;
 import ca.quadrilateral.jua.game.IGameStateMachine;
 import ca.quadrilateral.jua.game.ITextRenderer;
 
 public class DefaultTextRenderer implements ITextRenderer {
+    private static final Logger logger = LoggerFactory.getLogger(DefaultTextRenderer.class);
+    
 	@Autowired
 	private IGameConfiguration gameConfigurationManager;
 
@@ -46,7 +52,7 @@ public class DefaultTextRenderer implements ITextRenderer {
 
 	@Override
 	public void addText(String text) {
-		System.out.println("Adding text to renderer");
+	    logger.debug("Adding text to renderer");
 		this.textBuffer.append(text);
 		renderedLastCharacter = false;
 		queueLineRecalc = true;
@@ -152,7 +158,7 @@ public class DefaultTextRenderer implements ITextRenderer {
 				if ((this.gameStateMachine.getGameState() & IGameStateMachine.GAME_STATE_GET_ENTER_INPUT) > 0) {
 					final String input = this.gameStateMachine.getMostRecentInput();
 					if (input != null) {
-						System.out.println("Got Input");
+					    logger.debug("Got Input");
 						this.gameStateMachine.setInput(null);
 						this.gameStateMachine.removeState(IGameStateMachine.GAME_STATE_GET_ENTER_INPUT);
 						lines = lines.subList(lineCounter, lines.size());
@@ -164,10 +170,10 @@ public class DefaultTextRenderer implements ITextRenderer {
 						realCharCount = 0;
 						tooMuchInput = false;
 					} else {
-						System.out.println("Still waiting for input...");
+					    logger.debug("Still waiting for input...");
 					}
 				} else {
-					System.out.println("Waiting for input");
+				    logger.debug("Waiting for input");
 					this.gameStateMachine.waitForEnterInput();
 				}
 			}

@@ -1,5 +1,17 @@
 package ca.quadrilateral.jua.runner.parser;
 
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+
+import javax.xml.xpath.XPathConstants;
+import javax.xml.xpath.XPathFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
 import ca.quadrilateral.jua.game.entity.impl.CharacterClass;
 import ca.quadrilateral.jua.game.entity.impl.CharacterRace;
 import ca.quadrilateral.jua.game.entity.impl.LevelBasedAbilityDefinition;
@@ -12,15 +24,10 @@ import ca.quadrilateral.jua.game.exception.JUARuntimeException;
 import ca.quadrilateral.jua.game.impl.DiceExpression;
 import ca.quadrilateral.jua.game.impl.Thac0Formula;
 import ca.switchcase.commons.util.XmlDomUtilities;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathFactory;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 public class CharacterClassParser {
+    private static final Logger logger = LoggerFactory.getLogger(CharacterClassParser.class);
+    
     private Map<Integer, SavingThrowTable> savingThrowTables = null;
 
     public CharacterClassParser(Map<Integer, SavingThrowTable> savingThrowTableDefinitions) {
@@ -54,7 +61,7 @@ public class CharacterClassParser {
         characterClass.setAdvancedRankAdditionalExperience(XmlDomUtilities.getAttributeValueAsInteger(levelsNode, "advancedRankAdditionalXpRequired"));
         characterClass.setAdvancedRankAdditionalHitPoints(XmlDomUtilities.getAttributeValueAsInteger(levelsNode, "advancedRankAdditionalHitPoints"));
 
-        System.out.println("Character Class: " + characterClass.getName() + " Save Table: " + characterClass.getSavingThrowTable());
+        logger.debug("Character Class: {} Save Table: {}", characterClass.getName(), characterClass.getSavingThrowTable());
 
         final NodeList levelNodeList = levelsNode.getChildNodes();
         for(int n = 0; n < levelNodeList.getLength(); n++) {

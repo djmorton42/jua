@@ -1,7 +1,9 @@
 package ca.quadrilateral.jua.game.eventhandler;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IEventHandler;
 import ca.quadrilateral.jua.game.IGameContext;
@@ -13,7 +15,8 @@ import ca.quadrilateral.jua.game.impl.event.TextEvent;
 
 
 public class TextEventHandler extends AbstractEventHandler {
-	private static final Logger log = Logger.getLogger(TextEventHandler.class);
+	private static final Logger logger = LoggerFactory.getLogger(TextEventHandler.class);
+	
     @Autowired
     protected IGameContext gameContext;
 
@@ -33,7 +36,7 @@ public class TextEventHandler extends AbstractEventHandler {
 	}
 
 	private void initialize() {
-		System.out.println("Initializing TextEvent Handler");
+		logger.debug("Initializing TextEvent Handler");
 		this.eventStage = 0;
 	}
 
@@ -45,14 +48,14 @@ public class TextEventHandler extends AbstractEventHandler {
     protected void handleFirstLoop(TextEvent textEvent) {
 		if (super.isFirstLoop) {
 			if (textEvent.shouldFire()) {
-				System.out.println("Should fire");
+				logger.debug("Should fire");
 				textEvent.incrementFireCount();
 				if (textEvent.backupOneStepWhenDone()) {
 					gameStateMachine.setRevertPartyPositionAfterChain(true);
 				}
 				//TODO:  Should fire counter be incremented if shouldFire returns false?  (ie. Wrong direction, etc)unt();
 			} else {
-				System.out.println("Should not fire");
+				logger.debug("Should not fire");
 				eventStage = IEventHandler.EVENT_STAGE_DONE_EVENT_DID_NOT_HAPPEN;
 			}
 			this.isFirstLoop = false;

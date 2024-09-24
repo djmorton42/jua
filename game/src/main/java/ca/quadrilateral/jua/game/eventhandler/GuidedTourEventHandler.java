@@ -1,6 +1,9 @@
 package ca.quadrilateral.jua.game.eventhandler;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IEventHandler;
 import ca.quadrilateral.jua.game.IGameClock;
@@ -14,6 +17,8 @@ import ca.quadrilateral.jua.game.enums.FacingEnum;
 import ca.quadrilateral.jua.game.impl.event.GuidedTourEvent;
 
 public class GuidedTourEventHandler extends AbstractEventHandler {
+    private static final Logger logger = LoggerFactory.getLogger(GuidedTourEventHandler.class);
+    
     public static final long NANOS_PER_MS = 1000000;
 
     @Autowired
@@ -35,7 +40,7 @@ public class GuidedTourEventHandler extends AbstractEventHandler {
     }
 
     private void initialize() {
-        System.out.println("Initializing GuidedTourEvent Handler");
+        logger.debug("Initializing GuidedTourEvent Handler");
         this.eventStage = 0;
         this.stepCounter = 0;
         this.lastStepTime = 0;
@@ -44,14 +49,14 @@ public class GuidedTourEventHandler extends AbstractEventHandler {
     protected void handleFirstLoop(GuidedTourEvent guidedTourEvent) {
         if (super.isFirstLoop) {
             if (guidedTourEvent.shouldFire()) {
-                System.out.println("Should fire");
+                logger.debug("Should fire");
                 guidedTourEvent.incrementFireCount();
                 if (guidedTourEvent.backupOneStepWhenDone()) {
                     gameStateMachine.setRevertPartyPositionAfterChain(true);
                 }
                 //TODO:  Should fire counter be incremented if shouldFire returns false?  (ie. Wrong direction, etc)unt();
             } else {
-                System.out.println("Should not fire");
+                logger.debug("Should not fire");
                 eventStage = IEventHandler.EVENT_STAGE_DONE_EVENT_DID_NOT_HAPPEN;
             }
             this.isFirstLoop = false;
@@ -119,7 +124,7 @@ public class GuidedTourEventHandler extends AbstractEventHandler {
 
 
         stepCounter++;
-        System.out.println("Completed Guided Tour Step: " + stepCounter + " of " + event.getSteps().size() + " (" + direction.toString() + ")");
+        logger.debug("Completed Guided Tour Step: {} of {} ()", new Object[] {stepCounter, event.getSteps().size(), direction.toString()});
     }
 
     @Override

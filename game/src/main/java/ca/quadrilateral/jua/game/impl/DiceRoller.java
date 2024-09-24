@@ -1,10 +1,16 @@
 package ca.quadrilateral.jua.game.impl;
 
-import ca.quadrilateral.jua.game.IDiceRoller;
 import java.text.MessageFormat;
 import java.util.Random;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import ca.quadrilateral.jua.game.IDiceRoller;
+
 public class DiceRoller implements IDiceRoller {
+    private static final Logger logger = LoggerFactory.getLogger(DiceRoller.class);
+    
     private static final Random random = new Random();
 
 
@@ -17,7 +23,7 @@ public class DiceRoller implements IDiceRoller {
 
         result += expression.getModifier();
 
-        System.out.println(MessageFormat.format("Dice Roll ({0}) => {1}", expression.toString(), result));
+        logger.debug("Dice Roll ({}) => {}", expression.toString(), result);
         
         return result;
     }

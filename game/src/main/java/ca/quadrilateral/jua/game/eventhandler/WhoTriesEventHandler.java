@@ -1,5 +1,9 @@
 package ca.quadrilateral.jua.game.eventhandler;
 
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import ca.quadrilateral.jua.game.IEvent;
 import ca.quadrilateral.jua.game.IGameStateMachine;
 import ca.quadrilateral.jua.game.entity.IAbility;
@@ -12,9 +16,10 @@ import ca.quadrilateral.jua.game.enums.WhoTriesCheckType;
 import ca.quadrilateral.jua.game.impl.DiceRoller;
 import ca.quadrilateral.jua.game.impl.event.PostEventAction;
 import ca.quadrilateral.jua.game.impl.event.WhoTriesEvent;
-import org.apache.commons.lang.StringUtils;
 
 public class WhoTriesEventHandler extends TextEventHandler {
+    private static final Logger logger = LoggerFactory.getLogger(WhoTriesEventHandler.class);
+    
     private static final int EVENT_STAGE_BEGIN_WHO_TRIES_EVENT = 5;
 
     private static final int EVENT_STAGE_AFTER_RENDER_HANDLE_FAILURE = 40;
@@ -59,7 +64,7 @@ public class WhoTriesEventHandler extends TextEventHandler {
 
         if (eventStage == EVENT_STAGE_BEGIN_WHO_TRIES_EVENT) {
             this.gameStateMachine.waitForSelectInput();
-            System.out.println("Waiting for select input");
+            logger.debug("Waiting for select input");
             eventStage = 6;
         }
 
@@ -77,7 +82,7 @@ public class WhoTriesEventHandler extends TextEventHandler {
         }
 
         if (eventStage == 10) {
-            System.out.println("Who Tries Event Succeeded");
+            logger.debug("Who Tries Event Succeeded");
             final String whoTriesText = whoTriesEvent.getOnSuccessText();
             if (!StringUtils.isBlank(whoTriesText)) {
                 textRenderer.addText(scriptManager.processVariableReplacement(whoTriesText));
@@ -89,7 +94,7 @@ public class WhoTriesEventHandler extends TextEventHandler {
         }
 
         if (eventStage == 20) {
-            System.out.println("Who Tries Event Failed");
+            logger.debug("Who Tries Event Failed");
             unsuccessfulAttemptsCounter++;
             eventStage = EVENT_STAGE_AFTER_RENDER_HANDLE_FAILURE;
         }
@@ -109,11 +114,11 @@ public class WhoTriesEventHandler extends TextEventHandler {
         }
 
         if (eventStage == EVENT_STAGE_AFTER_RENDER_HANDLE_FAILURE) {
-            System.out.println("Running after failure");
+            logger.debug("Running after failure");
             if (unsuccessfulAttemptsCounter >= whoTriesEvent.getNumberOfAttempts()) {
                 eventStage = EVENT_STAGE_RENDER_FAILURE_TEXT;
             } else {
-                System.out.println("Attempt is failed... should try again");
+                logger.debug("Attempt is failed... should try again");
                 textRenderer.clear();
                 final String tryAgainText = whoTriesEvent.getTryAgainText();
                 if (!StringUtils.isBlank(tryAgainText)) {
@@ -166,7 +171,7 @@ public class WhoTriesEventHandler extends TextEventHandler {
 
     private void handlePostEventAction(PostEventAction action) {
         final IEvent chainedEvent = action.getChainedEvent();
-        System.out.println("Post Event Action Chain: " + chainedEvent.toString());
+        logger.debug("Post Event Action Chain: {}", chainedEvent.toString());
         if (action.isBackupOneStepWhenDone()) {
             gameStateMachine.setRevertPartyPositionAfterChain(true);
             gameStateMachine.clearReturnEventStack();

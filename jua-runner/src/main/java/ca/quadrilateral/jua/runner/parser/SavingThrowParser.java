@@ -1,18 +1,25 @@
 package ca.quadrilateral.jua.runner.parser;
 
-import ca.quadrilateral.jua.game.entity.impl.SavingThrowDefinition;
-import ca.quadrilateral.jua.game.entity.impl.SavingThrowTable;
-import ca.quadrilateral.jua.game.exception.JUARuntimeException;
-import ca.switchcase.commons.util.XmlDomUtilities;
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
+import ca.quadrilateral.jua.game.entity.impl.SavingThrowDefinition;
+import ca.quadrilateral.jua.game.entity.impl.SavingThrowTable;
+import ca.quadrilateral.jua.game.exception.JUARuntimeException;
+import ca.switchcase.commons.util.XmlDomUtilities;
+
 public class SavingThrowParser {
+    private static final Logger logger = LoggerFactory.getLogger(SavingThrowParser.class);
+    
     public Map<Integer, SavingThrowTable> parseSavingThrowTables(Document document) {
 
         try {
@@ -46,7 +53,7 @@ public class SavingThrowParser {
                     saveTable.addSavingThrowDefinition(saveDefinition);
                 }
 
-                System.out.println("In Parser Save Table: " + saveTable.toString());
+                logger.debug("In Parser Save Table: {}", saveTable.toString());
 
                 result.put(tableId, saveTable);
             }

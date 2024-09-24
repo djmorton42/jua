@@ -12,9 +12,14 @@ import ca.quadrilateral.jua.game.impl.event.QuestionButtonEvent;
 import ca.quadrilateral.jua.game.impl.event.QuestionOption;
 import java.util.ArrayList;
 import java.util.List;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 public class QuestionButtonEventHandler extends AbstractEventHandler {
+    private static final Logger logger = LoggerFactory.getLogger(QuestionButtonEventHandler.class);
+    
 	@Autowired
 	private IGameStateMachine gameStateMachine;
 
@@ -31,7 +36,7 @@ public class QuestionButtonEventHandler extends AbstractEventHandler {
 	}
 
 	private void initialize() {
-		System.out.println("Initializing QuestionButtonEvent Handler");
+		logger.debug("Initializing QuestionButtonEvent Handler");
 		this.eventStage = 0;
 		this.questionPath = 0;
 	}

@@ -4,15 +4,16 @@ import java.awt.DisplayMode;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferStrategy;
-import java.text.MessageFormat;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 public class DisplayManager implements IDisplayManager {
-    private static final Logger log = Logger.getLogger(DisplayManager.class);
+    private static final Logger logger = LoggerFactory.getLogger(DisplayManager.class);
 
     private GraphicsEnvironment graphicsEnvironment = null;
     private GraphicsDevice graphicsDevice = null;
@@ -27,16 +28,13 @@ public class DisplayManager implements IDisplayManager {
     }
 
     private void reportError(String errorMessage) {
-        log.fatal(errorMessage);
+        logger.error(errorMessage);
         JOptionPane.showMessageDialog(null, errorMessage, "JUA Initialization Error", JOptionPane.ERROR_MESSAGE);
     }
 
-    /* (non-Javadoc)
-     * @see ca.quadrilateral.jua.runner.IDisplayManager#initialize()
-     */
     public void initialize() {
 
-        System.out.println("Initializing Display Manager");
+        logger.info("Initializing Display Manager");
         this.graphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
 
         this.graphicsDevice = this.getGraphicsDevice(0);
@@ -107,7 +105,8 @@ public class DisplayManager implements IDisplayManager {
 
     private DisplayMode getDisplayMode(GraphicsDevice graphicsDevice, int width, int height, int bitDepth) {
         for (DisplayMode mode : graphicsDevice.getDisplayModes()) {
-        	System.out.println(MessageFormat.format("Available Mode {0}x{1}x{2}", mode.getWidth(), mode.getHeight(), mode.getBitDepth()));
+            
+        	logger.info("Available Mode {}x{}x{}", new Object[] {mode.getWidth(), mode.getHeight(), mode.getBitDepth()});
             if ((mode.getBitDepth() == DisplayMode.BIT_DEPTH_MULTI
             		|| mode.getBitDepth() == bitDepth)
             		&& mode.getHeight() == height

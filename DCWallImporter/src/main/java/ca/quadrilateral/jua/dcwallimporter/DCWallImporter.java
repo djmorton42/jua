@@ -8,9 +8,11 @@ import java.io.File;
 import java.io.FileWriter;
 import java.text.MessageFormat;
 import java.util.UUID;
+
 import javax.imageio.ImageIO;
 
 public class DCWallImporter {
+    
     private static BufferedImage getScaledImage(BufferedImage image) {
         int initialWidth = image.getWidth();
         int initialHeight = image.getHeight();

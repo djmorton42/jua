@@ -4,6 +4,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.3.30.RELEASE</spring.version>
+        <groovy.version>3.0.22</groovy.version>
     </properties>
 
 
@@ -17,10 +19,10 @@
         <module>display-engine</module>
         <module>default-first-person-display-engine</module>
         <module>game</module>
-        <module>Sandbox</module>
+        <!--module>Sandbox</module-->
         <module>DCWallImporter</module>
         <module>jua-runner</module>
-        <module>wall-generator</module>
+        <!--module>wall-generator</module-->
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -42,7 +44,8 @@
             <dependency>
                 <groupId>org.codehaus.groovy</groupId>
                 <artifactId>groovy-all</artifactId>
-                <version>1.8.0</version>
+                <version>${groovy.version}</version>
+                <type>pom</type>
             </dependency>
             <dependency>
                 <groupId>junit</groupId>
@@ -68,22 +71,22 @@
             <dependency>
                 <groupId>ca.switchcase</groupId>
                 <artifactId>sct-commons</artifactId>
-                <version>1.0.14-SNAPSHOT</version>
+                <version>1.0.15</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>org.springframework.core</artifactId>
-                <version>3.0.2.RELEASE</version>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>org.springframework.beans</artifactId>
-                <version>3.0.2.RELEASE</version>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework</groupId>
-                <artifactId>org.springframework.context</artifactId>
-                <version>3.0.2.RELEASE</version>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
             </dependency>
             <dependency>
                 <groupId>commons-collections</groupId>
@@ -93,7 +96,7 @@
         </dependencies>
     </dependencyManagement>
 
-
+<!--
     <pluginRepositories>
         <pluginRepository>
             <id>onejar-maven-plugin.googlecode.com</id>
@@ -105,7 +108,7 @@
             <url>http://repo1.maven.org/maven2/</url>
         </pluginRepository>
     </pluginRepositories>
-
+-->
 
     <build>
         <pluginManagement>
@@ -122,8 +125,8 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>7</source>
+                    <target>7</target>
                 </configuration>
             </plugin>
         </plugins>
